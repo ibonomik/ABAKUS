@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <meta charset="utf-8" />
+        <title></title>
+</head>
+
+<style type="text/css">
+        /* IKILIDIV-PAYLSMVEYUTUB BASI */
+        * {
+                box-sizing: border-box;
+        }
+
+        /* Create two equal columns that floats next to each other */
+        .column-ikilidiv-paylsmveyutub {
+                float: left;
+                width: 50%;
+                padding: 4px;
+                height: auto;
+                /* Should be removed. Only for demonstration */
+        }
+
+        /* Clear floats after the columns */
+        .row-ikilidiv-paylsmveyutub:after {
+                content: "";
+                display: table;
+                clear: both;
+        }
+
+        /* ..... Blogi Paylasim Bası ..... */
+        div.ibo-div-blogi-paylsm {
+                display: inline;
+                width: 130px;
+                height: auto;
+                margin-right: 10px;
+                padding: auto;
+                float: right;
+        }
+
+        ul.ibo-ul-blogi-paylsm {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+        }
+
+        ul.ibo-ul-blogi-paylsm li {
+                display: inline;
+        }
+
+        /* ......Blogi Paylasim Sonu...... */
+        /* ......Muzvid Bası...... */
+        #muzvid {
+                overflow-x: auto;
+                display: none;
+        }
+
+        #muzvid-button {
+                background-color: transperant;
+                border: none;
+                border-radius: 8px;
+                font: bold 16px arial, sans -serif;
+                color: purple;
+                padding: 4px;
+                margin-left: 10px;
+                width: 130px;
+                float: left;
+                text-align: center;
+                text-decoration: none;
+                display: block;
+                cursor: pointer;
+                transition-duration: 0.4s;
+        }
+
+        #muzvid-button:hover {
+                background-color: yellowgreen;
+                color: purple;
+        }
+
+        /* ......Muzvid Sonu...... */
+        /* IKILIDIV-PAYLSMVEYUTUB SONU */
+</style>
+
+<body>
+        <div class="row-ikilidiv-paylsmveyutub">
+                <div class="column-ikilidiv-paylsmveyutub">
+                        <div id="muzvid"><iframe width="400" height="300"
+                                        src="https://www.youtube.com/embed/videoseries?list=PL748B8613BAA3FDB2"
+                                        title="YouTube video player" frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen></iframe></div>
+                        <button id="muzvid-button" title="Bir Yandan Müzik Dinle">♫ . MuzVid . ♫</button>
+
+                        <script>
+                                document.getElementById("muzvid-button").addEventListener("click", function () {
+                                        var newWindowContent = document.getElementById('muzvid')
+                                                .innerHTML;
+                                        var newWindow = window.open("", "", "width=430,height=330");
+                                        newWindow.document.write(newWindowContent);
+                                });
+                        </script>
+                </div>
+
+                <div class="column-ikilidiv-paylsmveyutub">
+                        <div class="ibo-div-blogi-paylsm">
+                                <ul class="ibo-ul-blogi-paylsm">
+                                        <li><a href="http://feeds.feedburner.com/HizilReis" rel="alternate"
+                                                        type="application/rss+xml" title="Beslemeyle Takip Et"
+                                                        target="_blank"><img
+                                                                src="https://drive.google.com/uc?id=0B6hjXoGtqTbPOVprSHE5WUstOU0"
+                                                                height="20" width="20" alt="Beslemeyle Takip Et" /></a>
+                                        </li>&nbsp;<li><a
+                                                        href="https://feedburner.google.com/fb/a/mailverify?uri=HizilReis&amp;loc=tr_TR"
+                                                        title="E Postayla Takip Et" target="popup"
+                                                        onclick="window.open('https://feedburner.google.com/fb/a/mailverify?uri=HizilReis&amp;loc=tr_TR','popup','width=550,height=520'); return false;"><img
+                                                                src="https://drive.google.com/uc?id=0B6hjXoGtqTbPaUdITEFVQ1pXd3c"
+                                                                alt="E Postayla Takip Et" height="21" width="21" /></a>
+                                        </li>&nbsp;<li><a
+                                                        href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhizilreis.blogspot.com.tr%2F&t=HIZIL%20RE%C4%B0S"
+                                                        title="Bloğu FACEBOOK'da Paylaş" target="popup"
+                                                        onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhizilreis.blogspot.com.tr%2F&t=HIZIL%20RE%C4%B0S','popup','width=600,height=500'); return false;"><img
+                                                                src="https://drive.google.com/uc?id=0B6hjXoGtqTbPTVNxOGhXZEgtaUU"
+                                                                alt="Bloğu FACEBOOK'da Paylaş" height="20"
+                                                                width="20" /></a></li>&nbsp;<li><a
+                                                        href="https://twitter.com/intent/tweet?source=https%3A%2F%2Fhizilreis.blogspot.com.tr%2F&text=HIZIL%20RE%C4%B0S:%20https%3A%2F%2Fhizilreis.blogspot.com.tr%2F&via=ibomi"
+                                                        title="Bloğu TWEET'le" target="popup"
+                                                        onclick="window.open('https://twitter.com/intent/tweet?source=https%3A%2F%2Fhizilreis.blogspot.com.tr%2F&text=HIZIL%20RE%C4%B0S:%20https%3A%2F%2Fhizilreis.blogspot.com.tr%2F&via=ibomi','popup','width=600,height=500'); return false;"><img
+                                                                src="https://drive.google.com/uc?id=0B6hjXoGtqTbPLXl1S1hvdW1DWmc"
+                                                                alt="Bloğu TWEET'le" height="20" width="20" /></a></li>
+                                        &nbsp;<li><a href="https://www.facebook.com/hizilreis/"
+                                                        title="Hızıl Reis FACEBOOK Sayfası" target="_blank"><img
+                                                                src="https://drive.google.com/uc?id=0B6hjXoGtqTbPZ2tWT2pNc3Z5VUk"
+                                                                alt="Hızıl Reis FACEBOOK Sayfası" height="20"
+                                                                width="20" /></a></li>
+                                </ul>
+                        </div>
+                </div>
+        </div>
+
+</body>
+
+</html>
