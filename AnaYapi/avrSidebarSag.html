@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>avrSidebarSag</title>
+
+
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <!-- EKLEMELERİM -->
+        <!-- <link rel="stylesheet" type="text/css" href="ibocss.css"> -->
+        <link rel="icon" href="http://127.0.0.1:3003/avare/avareFaviconHizilden.ico" type="image/x-icon">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        
+        <!-- INCLUDE AND RUN HTML SCRIPT BASI -->
+        <script>
+            $(function () {
+                var includes = $('[data-include]')
+                $.each(includes, function () {
+                    var file = $(this).data('include')
+                    $(this).load(file)
+                })
+            })
+        </script>
+        <!-- INCLUDE AND RUN HTML SCRIPT SONU -->
+
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+        
+            body,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Lato", sans-serif
+            }
+        
+            .w3-bar,
+            h1,
+            button {
+                font-family: "Montserrat", sans-serif
+            }
+        
+            .fa-anchor,
+            .fa-coffee {
+                font-size: 200px
+            }
+        
+            /** 
+                    * ! ----------------- */
+        
+            /* Column container */
+            .row {
+                display: -ms-flexbox;
+                /* IE10 */
+                display: flex;
+                -ms-flex-wrap: wrap;
+                /* IE10 */
+                flex-wrap: wrap;
+            }
+        
+            /* #sidebar-sol { */
+            /* -ms-flex: 20px; */
+            /* IE10 */
+            /* flex: 5%; */
+            /* background-color: #131212; */
+            /* padding: 1px; */
+            /* width: 5% 
+                    }*/
+        
+        
+            /* Main column */
+            .main {
+                -ms-flex: 70%;
+                /* IE10 */
+                flex: 70%;
+                background-color: white;
+                padding: 20px;
+        
+                /* align-items: left; */
+                /* justify-content: left; */
+            }
+        
+            /* Create two unequal columns that sits next to each other */
+        
+            /* Sidebar/right column */
+            .side {
+                -ms-flex: 25%;
+                /* IE10 */
+                flex: 25%;
+                background-color: #f3ecec;
+                padding: 20px;
+        
+                /* flex-direction: row; */
+                /* justify-content: right; */
+                /* align-items: left; */
+        
+            }
+        
+            /* Fake image, just for this example */
+            .fakeimg {
+                background-color: #aaa;
+                width: 100%;
+                padding: 20px;
+            }
+        
+            /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+            @media screen and (max-width: 700px) {
+                .row {
+                    flex-direction: column;
+                }
+            }
+        
+            /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+            @media screen and (max-width: 400px) {
+                .navbar a {
+                    float: none;
+                    width: 100%;
+                }
+            }
+        </style>
+
+
+    </head>
+
+    <body>
+
+        <!-- ! SIDEBAR SAG -->
+        <div class="side">
+            <div>
+                <!-- ? GADGETLAR BASI-->
+                <h3>HAVA DURUMU</h3>
+                <div data-include="Gadgets/HavaDurumu.html"></div>
+                <h3>SEYİR YARDIMCILARI</h3>
+                <div data-include="Gadgets/SeyirYardimcilari.html"></div>
+                <h3>ARAÇLAR</h3>
+                <div data-include="Gadgets/Converters.html"></div>
+                <!-- ? GADGETLAR SONU-->
+            </div>
+
+            <h2>About Me</h2>
+            <h5>Photo of me:</h5>
+            <div class="fakeimg" style="height:100px;">Image</div>
+            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <h3>More Text</h3>
+            <p>Lorem ipsum dolor sit ame.</p>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div><br>
+            <div class="fakeimg" style="height:60px;">Image</div>
+        </div>
+
+    </body>
+
+</html>
