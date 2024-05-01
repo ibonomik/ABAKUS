@@ -1,0 +1,691 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* !! LINK RENGIM BASI - Eski adı: sidebar-link rengi */
+.link-rengim {
+    color: #48689b;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* ^ Alttaki block link-rengim cssnin varsayılanı. Eğer ilgili dosya içindeyse sorun yok. Değilse, external cssden (ABKS-CSS) alıyorsa; link rengi çıkmıyor. Link renginin a tage tanımlılığıyla ilgili sanırım.Alttakinden yukarıdakini ürettim Alttaki uncomment edilebilir. Çalışıyor her türlü */
+a.link-rengim:link {
+    color: #48689b;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a.link-rengim:visited {
+    color: #48689b;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a.link-rengim:hover {
+    color: #3ac426;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a.link-rengim:active {
+    color: #FF5600;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+/* !! SIDEBAR LINK RENGI SONU
+
+
+/* !! LINK İçin AYRIK CSS: */
+/* YUKARIDAKİYLE BİRLEŞTİRİLEBİLİR: 
+Blogger Sidebar link rengine bağladığımda aynı rengi tutturamadığım için bu cssyi yazmıştım. Yukarıdaki link-rengim ile aynı sonuç. Farkı; bir linke tıklayınca :focus'daki renge bürünüp öyle kalması linkin. Toggle ya da geri dön karşılığı varsa düğmenin, read more-read lessdeki gibi, tıklayınca ya da sayfada bir yere tıklayınca normal link rengine dönüyor. Tutmayan olursa bunu ya da yukarıdakini doğrudan o dosyaya girip kullanabilirsin. */
+.link-ayrikCSS {
+    color: #48689b;
+    transition-duration: 0.1s;
+    font: bold 13px;
+    padding: 5px 5px 5px 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.link-ayrikCSS:hover {
+    color: #3ac426;
+
+}
+
+.link-ayrikCSS:focus {
+    color: #FF5600;
+}
+
+/* !! AYRIK CSS SONU: */
+
+
+/* !! DEVAMINI OKU DÜĞMEM BASI */
+.yayn-cagrı-devamıOku {
+    /* display: inline-block; */
+    display: block;
+    float: right;
+    /* When aligning elements with float , always define margin and padding
+for the <body> element. */
+    /* overflow-x */
+
+    /* width: 100%; */
+    color: #48689b;
+    /* background-color: transparent; */
+    background-color: #d4e8f0;
+    padding: 10px;
+    margin: 0;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    /* border: none; */
+    border: 2px solid green;
+    border-radius: 8px;
+    transition-duration: 0.1s;
+}
+
+/* TODO: Sonra yukarıdaki background ve border değerlerini diğeriyle değiştir. */
+
+.yayn-cagrı-devamıOku:hover {
+    color: #3ac426;
+}
+
+/* ? Buttonın floatını clearfix::after aklıyla temizle */
+.yayn-cagrı-devamıOku::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.yayn-cagrı-devamıOku a {
+    text-decoration: none;
+}
+
+/* !! DEVAMINI OKU DÜĞMEM BASI */
+
+
+/* !! GADGET ARKA PLAN BASI */
+.gadgt-arka {
+    background-color: #e9d9a5;
+    border: 1px solid #e9d9a5;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+/* !! GADGET ARKA PLAN SONU */
+
+
+/* !! FOOTER OZELLESTIRMEM BASI */
+#footer {
+    background-color: #333;
+}
+
+#topfooter {
+    display: flex;
+    justify-content: center;
+    width: 400px;
+    margin: 0 auto;
+    color: #ffffff;
+}
+
+/* !! FOOTER OZELLESTIRMEM SONU */
+
+
+/* !! CODE BOX BASI */
+.code {
+    background: #f5f8fa;
+    background-repeat: no-repeat;
+    border: solid #5C7B90;
+    border-width: 1px 1px 1px 20px;
+    color: #000000;
+    font: 13px 'Courier New', Courier, monospace;
+    line-height: 16px;
+    margin: 10px 0 10px 10px;
+    max-height: 200px;
+    min-height: 16px;
+    overflow: auto;
+    padding: 10px 10px 10px;
+    width: 90%;
+}
+
+.code:hover {
+    background: #FAFAFA;
+    background-repeat: no-repeat;
+}
+
+.code {
+    font-family: Consolas, "courier new";
+    color: crimson;
+    background-color: #f1f1f1;
+    padding: 2px;
+    font-size: 105%;
+}
+
+/* !! CODE BOX SONU */
+
+
+/* ** <!-- +++================ --><!-- +++ YAZI KALIBIM -->*/
+
+/* !! YAZI KALIBIM BASI */
+* {
+    font-family: Sans-serif, Verdana, Arial, Helvetica;
+}
+
+/* ++ <!-- +++======== --><!-- +++ HEADERLAR -->*/
+/* Bu header ana header için değil. İç headerlar için. */
+.header-yayn {
+    display: block;
+    background-color: #350119dc;
+    /* opacity: 0.7; */
+    font-size: 22px;
+    font-weight: normal;
+    /* font-weight: bold; */
+    text-align: center;
+    color: white;
+    padding: 14px;
+    /* margin: 10px; */
+}
+
+/* Bu da headerın responsiveness'ı */
+@media (max-width:600px) {
+    .header-yayn {
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+
+/* HOVER VE FOCUSLARI: Bu hover ve focus headera,başlıklara vb İÇİN kullanılabilir. */
+.yayn:hover {
+    color: #09000f;
+    background-color: #b0fabc;
+    opacity: 0.5;
+    /* The opacity-level describes the transparency-level, where 1 is not transparent at all, 0.5 is 50% see-through, and 0 is completely transparent.  */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.yayn:focus {
+    color: #09000f;
+    background-color: #f5faf6;
+    /* opacity: 1; */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* HEADER X DÜĞMESİ KOYARSAN, 
+ÖRNEĞİM: 
+        Converter Başlık çubuğu ve başlık ve Kapat: X 
+    <header>
+        <span class="convTMClose">&times;</span>
+        <h2 id="conv-header">ÖLÇÜ DÖNÜŞTÜRÜCÜLERİ<br>Measure
+            Converters
+        </h2>
+    </header> */
+
+
+
+/* ++ <!-- +++======== --><!-- +++ BAŞLIKLAR -->*/
+/* Başlıkların tekrar edenlerini silip H CSSsini kısalttım. Dolayısıyla classlara h-yayn ve h?-yayn kaçsa birlikte girmen gerekiyor. */
+.h-yayn {
+    display: block;
+    color: #663508;
+    opacity: 1;
+    /* font-family: Verdana, Arial, Sans-serif, Helvetica; */
+    font-size: 200%;
+    font-weight: normal;
+    text-align: center;
+    margin: 10px;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    /* Note that we have added the CSS transition property  to animate the border color (takes 0.5 seconds to change the color on focus.0.1 yaptım.
+Aldığım örnekte yukarıdaki ana class grubuna eklenmiş bu özellik .Focus özellikli bir iş yapmasına rağmen.Aşağıda focus bölümüne color ve border ekledim. Dolayısıyla bu eklediklerimi oynatıyor.Kaç saniyeyse o süre boyunca animasyon sürüyor. input[type=number] veya mesela:
+div { width: 100px; height: 100px; background: red;  transition: width 2s; }
+div:hover { width: 300px; }  div:hover daki 300px'ele genişler div hover edince. */
+    cursor: pointer;
+    /* (cursor: pointer;) Yani imleç el oluyor ilgili noktaya yani input alanına odaklanınca.Burada input için.İptal,çünkü bir şey yazacak,sayı girecek ve odaklanınca çizgiye dönüşmesi daha iyi bu durumda.Bu cssyi kaldırınca (cursor: default;) oluyor kendiliğinden.  */
+    text-decoration: none;
+    /* text-decoration; altı çizili,üstü çizili,başı noktalı gibi text stillerini tanımlar. 
+"All links in HTML are underlined by default. Sometimes you see that links are styled with no underline. The text-decoration: none; is used to remove the underline from links.
+Bu cssyi linkli bir formdan almıştım. Converterımda link yok ama dursun zararı yok.
+*/
+}
+
+/**
+*todo: Yayn gridlerini yapınca bunu güncelle. */
+.h-yayn-yanbaslik {
+    text-align: left;
+    margin-left: 20%;
+}
+
+.h1-yayn {
+    color: #0f5805;
+    font-size: 190%;
+}
+
+.h2-yayn {
+    color: #0f5805;
+    font-size: 190%;
+}
+
+.h3-yayn {
+    color: #830303;
+    font-size: 170%;
+}
+
+.h4-yayn {
+    color: #055699;
+    font-size: 150%;
+}
+
+
+.h5-yayn {
+    color: #975204;
+    font-size: 140%;
+}
+
+.h6-yayn {
+    color: #320149;
+    font-size: 130%;
+}
+
+/* ++ <!-- +++======== --><!-- +++ prgrf-yayn -->*/
+.prgrf-yayn {
+    display: block;
+    color: #242424;
+    /* font-family: Verdana, Arial, Sans-serif, Helvetica; */
+    font-size: 110%;
+    /* text-transform: uppercase; */
+    text-align: left;
+    text-indent: 20px;
+    /* Paragraf başı girintisi için text-indent kullan */
+    margin-top: 1em;
+    margin-bottom: 1em;
+    /* em: Relative to the font-size of the element (2em means 2
+times the size of the current font) */
+    margin-left: 20%;
+    margin-right: 20%;
+    /* Margin,çerçeveliymiş gibi düşünürsen yazıyı,çerçeveden sonraya ekler boşluğu. Margin de,padding de burada paragraf biçimlendirmesi söz konusu olduğu için, paragraftaki tüm satırlara ekliyor bu girintiyi. Top ve bottomlara gerek yok P'nin varsayılan margini iyi zaten. */
+    padding-left: 1px;
+    padding-right: 1px;
+    /* Salt padding yazının (P'nin) dört yanına ekler. Yazı çerçeveliymiş gibi düşünürsen; çerçeveyle yazı arasını açar. */
+    background-color: #f4fcff;
+    /* border: 2px solid powderblue; */
+    /* Çevresine çerçeve */
+}
+
+/* ++ <!-- +++======== --><!-- +++ text-yayn -->*/
+.text-yayn {
+    letter-spacing: 0.6px;
+    /*  Örneğin -2px - Harfler arası açıklık */
+    word-spacing: 0.6px;
+    /* Örneğin -2px - Sözcükler arası açıklık */
+    line-height: 1.5;
+    /* Örneğin 0.8 - Satırlar arası Yükseklik*/
+    white-space: normal;
+    /* Extralık: nowrap - Satır sonlarında bölmeyesin. Dolayısıyla satır o paragraf bitene kadar uzuyor tek satır halinde. */
+}
+
+/* ++ <!-- +++======== --><!-- +++ hr-yayn-txtli -->*/
+.hr-yayn-divi {
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 200px;
+}
+
+.hr-yayn-txtli {
+    display: inline-block;
+    /* Make them behave like inline content */
+    color: #663508;
+    border-width: 1px;
+    border-radius: 3px;
+    width: calc(15% - 4px);
+    /* Calculate width based on container */
+    margin: 3px 7px 3px 7px;
+    /* Adjust margins */
+    /*
+Sonuç: Hr çizgileri: 15% + 15% = 30%  
++ Yazı: 14% = 44%  
++  Marginler: Üst 3,Sağ 7,Alt 3,Sol 7 = 20%  
+Toplam: 30 + 15 + 20 = 94%
+6% artan boş alan */
+}
+
+.hr-hizilText-yayn {
+    display: inline-block;
+    color: #663508;
+    font-size: 80%;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nokta-yayn {
+    height: 15px;
+    width: 15px;
+    background-color: #663508;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* !! YAZI KALIBIM SONU */
+
+
+
+
+/* !! ABAKUS .INDEX CSS BASI */
+/*** <!-- +++======== --><!-- +++ ABKS.INDEX CSS -->*/
+/*<!-- +++======== --><!-- +++ ANA GRID CONTAINER CSS -->*/
+/**
+            *?? GRID CONTAINER CSS */
+.abks-grid-container {
+    display: grid;
+    /* Sayfamın hepsini 12 sütuna oturtup spanlarla ayarladım genişlikleri. */
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+
+    /* grid-column: 1 / span 12; */
+    /* grid-template-rows: auto; */
+    /* Bkz: Defter Grid Notları */
+
+    background-color: #fc7609;
+    /*  Bu gap ana gövde çevresine ve iç gövdelerin çevresine birden çizgi çekiyor.??? */
+    /* gap: 4px; */
+    /* Bu ana container borderı yalnızca ana gövdenin çavresine bir çizgi çekiyor. İç 4 gövdenin çevrelerini ellemiyor, çünkü inherited değil. Bkz.w3c. İtemlar için ayrı border atamak gerekiyor. */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+    /* padding: 10px; */
+}
+
+
+
+/*<!-- +++======== --><!-- +++ HEADER CSS -->*/
+.abks-grid-item-header {
+    grid-column: 1 / span 12;
+    /* grid-row: 1 / span 1; */
+
+    font-size: 20px;
+    font-style: italic;
+    text-align: center;
+    background-color: #1abc9c;
+    color: white;
+
+    padding: 80px;
+    /* gap: 4px; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+/** DİĞER ITEM VALUES:
+            *^ HEIGHT: Aşağıdaki yükseklikler gerekirse ana gridlerin veya subgridlerin satır yüksekliklerini  ayarlamak için kullanılabilir. Unutma satırlar span edilmiş olsa bile yalnızca tek satırda etkililer */
+/* height: auto; */
+/* height: fit-content; */
+/* min-height: 10%;
+                max-height: 20%; */
+
+/**
+            *^ BORDER: solid eklemezsen varsayılanı solidse de border çıkmıyor. Ana contai̇nera da gi̇rebi̇li̇rsi̇n BUNLARI tümüne bi̇rden uygulamak i̇çi̇n. */
+/* border: 18px solid black; */
+/* border-radius: 7px; */
+/* Border noktasında: Aralara gap girmişsen OK ama gapsizse yanlardaki çizgilerin çiftleyip kalınlaşmasına karşı outline kullanabilirsin */
+/* outline: 22px solid black; */
+
+
+/* Increase the font size of the <h1> element */
+.abks-grid-item-header h1 {
+    font-size: 50px;
+    font-style: normal;
+}
+
+#abks-divInHeader {
+    display: block;
+    font-size: 15px;
+    font-style: normal;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: transparent;
+    padding: 5px;
+}
+
+
+/*<!-- +++======== --><!-- +++ NAVBAR GRID CSS -->*/
+.abks-grid-item-navbar {
+    grid-column: 1 / span 12;
+    /* grid-row: 2 / span 1; */
+
+    background-color: #778df0;
+    height: 80px;
+    text-align: center;
+
+    padding: 5px;
+    /* gap: 4px; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+
+/**
+            *^ Bu alttaki̇ bloğu, eğer mega menüyü vb navbarı dolduran uzun kodları kaldırıp yeni bir dosyada, sade bir şekilde bir şeyler denemek gerektiğinde işlerleştir; navbarın düzgün çıkması için. İşin bitince uncomment again. */
+/*   color: white;
+                padding: 10px;
+                border: 6px solid #084258;
+                border-radius: 5px; */
+
+
+/* Style the navigation bar links */
+.abks-grid-item-navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    /* font-size: 15px; */
+    /* font-weight: bold; */
+}
+
+/* Right-aligned link */
+.abks-grid-item-navbar a.abks-grid-item-navbar-menu-right {
+    float: right;
+}
+
+/* Change color on hover */
+.abks-grid-item-navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/**
+*?? abks-grid-item-navbar a @MEDIA */
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .abks-grid-item-navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+/*<!-- +++======== --><!-- +++ YAYN-MAIN CSS -->*/
+.abks-grid-item-main {
+    grid-column: 1 / span 9;
+    /* grid-template-rows: repeat(0, 32em); */
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: #ffffff;
+    padding: 20px;
+    /* gap: 18px;
+                border: 4px solid #084258;
+                border-radius: 5px; */
+
+
+    /* !! İşlik */
+    /* position:relative; */
+    /* width:60%; */
+    /* margin-left: 0%; */
+}
+
+
+/*<!-- +++======== --><!-- +++YAYN-MAIN SUBGRID and @MEDIA: CSS -->*/
+.abks-grid-yayn-subgrid {
+    grid-column: 2 / span 8;
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+    padding: 10px;
+    height: 30em;
+    overflow: auto;
+    /* Bu da gerekebilir:  overflow: hidden; */
+
+    /* height: 20vw; */
+    /* height: 400px; */
+    /* min-height: minmax(10%, 40%); */
+    /* width:70%; */
+
+}
+
+
+/**
+*!! SUBGRID İŞLİK */
+/**
+*! ****Yazı divi için stillendirme ****** */
+
+/* .abks-subgrid-yaynDiv {
+display: inline-block; 
+padding: 20px; 
+width:100%"
+} */
+
+/* Float ve clearfix, sonra resimler için gerekli olacak. Align da kullanabilirim daha iyisi belki */
+/* Bkz: https://www.w3schools.com/css/css_float_clear.asp */
+/* float: right;
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
+/* ?? SUBGRID @MEDIA */
+@media (max-width: 700px) {
+    .abks-grid-yayn-subgrid {
+        grid-column: 1 / span 12;
+        /* height: 20em; */
+        font-size: 90%;
+    }
+}
+
+.abks-grid-yaynSayfasi-subgrid {
+    grid-column: 2 / span 8;
+    /* border: 2px solid #084258;
+                border-radius: 5px; */
+    padding: 20px;
+}
+
+/* ?? SUBGRID yaynSayfasi @MEDIA */
+@media (max-width: 700px) {
+    .abks-grid-yaynSayfasi-subgrid {
+        grid-column: 1 / span 12;
+        font-size: 90%;
+    }
+}
+
+
+
+/*<!-- +++======== --><!-- +++ SIDEBAR CSS -->*/
+.abks-grid-item-sidebar {
+    grid-column: 10 / span 3;
+    /* grid-template-rows: repeat(0, 28em); */
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: #f0e1c5;
+    padding: 20px;
+    /* gap: 18px;
+                border: 4px solid #084258;
+                border-radius: 5px; */
+
+
+    /* !! işlik */
+    /* override the default stretch */
+    /* align-self: flex-start;  */
+    /* align-self: flex-end;  */
+    /* -ms-grid-column-align: end;  */
+
+    /* height: calc(100vh - 30px); */
+    /* set a fixed height */
+    /* width: 25%; */
+    /* height:100%; */
+
+    /* position:absolute; */
+    /* margin-right:0px; */
+    /* margin: 10px; */
+
+}
+
+
+/*<!-- +++======== --><!-- +++SIDEBAR SUBGRID: CSS -->*/
+.abks-grd-item-sidebar-subgrd {
+    grid-column: 1 / span 3;
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+    padding: 10px;
+    height: 20em;
+    /* width:100%; */
+    overflow: auto;
+    /* Bu da gerekebilir:  overflow: hidden; */
+}
+
+
+/**
+*?? SIDEBAR SUBGRID  @MEDIA */
+@media (max-width: 700px) {
+    .abks-grd-item-sidebar-subgrd {
+        grid-column: 1 / span 12;
+        height: 10em;
+        font-size: 90%;
+    }
+}
+
+
+/*<!-- +++======== --><!-- +++ FOOTER CSS -->*/
+.abks-grid-item-footer {
+    grid-column: 1 / span 12;
+    /* grid-row: 12 / span 1; */
+    text-align: center;
+    background-color: #8a2c2c;
+
+    padding: 5px;
+    /* gap: 4px; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+
+/*<!-- +++======== --><!-- +++ ANA @MEDIA CSS -->*/
+/**
+            *^ Buraya main ve sidebar için olanları eklemek yeterli. Diğerleri grid yapısı dolayısıyla ve satırlarında tek de kaldıkları için zaten responsive bir şekilde içindekilerle birlikte bozulmadan daralıyorlar. Ki: İçindekilerdeki mega menu falan zaten responsive. Ama ekli kalsınlar.  */
+@media (max-width: 700px) {
+    .abks-grid-container {
+        font-size: 90%;
+    }
+
+    .abks-grid-item-header {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-navbar {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-main {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-sidebar {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-footer {
+        grid-column: 1 / span 12;
+    }
+}
+
+/* !! ABAKUS .INDEX CSS SONU */

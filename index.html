@@ -1,45 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
     <head>
-        <!-- Index sayfasında css dışındaki headerı,js kodları vb.yi include ile çağırmak yerine dorudan kullanmayı seçtim. -->
+
+        <!-- *. Özellikle 12 sütunlu yaptım ki ilerde aralara bir bölüm falan girersem kolay olsun, headerın meaderın span değerlerini vbsini değiştirmem gerekmesin ve sidebar genişliği gibi ayarları ince ayarlayabileyim. -->
+        <!--
+** İŞLİK: 
+^ Dropdown nav and sidebar menu: İçindekiler,Konu konu,Son yayınlar vb yap. Hamburgerle.
+BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI ÇAĞIRIYOR. //. Used to toggle the menu on small screens when clicking on the menu button::::  <script type="text/javascript" src="JScodes/avr-nav-menu-btn.js"></script>
+^ Breadcrump yap. Neredeyim bileyim.
+^ Blogi ve yayınsal paylaşım düğmeleri ekle.
+^ Yorum formu, İlginizi çekebilir bölümü vb 
+^ Lisans ekle 
+^ Sidebarı hide et küçülünce ve bir hamburger menüye bağla. Avare kalıbında var bu. Sondaki JS. Uyarla bure.
+^ Anchorlandırma. 
+^ Cssleri kısalt. Mesela headingleri birleştir. Ortakları bir başlığa ve ayrımlamaları kısa başlıklara
+h'lerim:.....10 aynı madde
+.......
+h1: sırf boy 
+mesela.
+
+-->
+        <!-- TODO+: Sorun şu: Makale sayfasını çağrıları yerleştirrek ve main iskeletini girerek hazırladık.İskelete makalemizi girdik. Makale eğer kök dizinde değil de bir klasör içindeyse, makale içindeki includelar çalışmıyor. Header,navbar vb. ve Abakus.css dosyası gibi çağrılarını alıp çıkaramıyor içinde. Kök dizindeyse her şey tamam. Çözüm htacsess olabilir. -->
+
+
+        <!-- +++======== --><!-- +++ BAGLAR -->
+
+        <meta charset="utf-8">
+        <meta name="description" content="DESCRIPTION">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
         <title>ABAKUS</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible' content='IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-        <script src="main.js"></script>
 
-        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- ?? SERVİS ÇAĞIRMALARIM-->
+        <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                            crossorigin="anonymous"></script>
+        <!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+        <link rel="stylesheet" type="text/css" href="ABKS-CSS.css">
+        <link rel="icon" href="ANAYAPI/ABKS.Faviconum-128x128-Yuvarlak.png" type="image/x-icon">
 
-        <!-- EKLEMELERİM -->
-        <link rel="stylesheet" type="text/css" href="AnaYapi/avr-css.css">
-        <link rel="icon" href="avareFaviconHizilden.ico" type="image/x-icon">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <!-- <script src="https://www.w3schools.com/lib/w3.js"></script>
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+        <!-- ^ Alttaki kod aşağıdaki INCLUDE AND RUN HTML SCRIPT'ini externaldan kullanırsan çağırmak için -->
+        <!-- <script type="text/javascript" src="JScodes/gold-incld-run.js"></script> -->
 
-
-
-        <!--  * HAZIR ÇAĞRILAR DEMETİ - Buradan kopyala yapıştır belgelere. GOLD 1 Nolu scriptin placeholderı biçimindeler.
-            <link rel="stylesheet" type="text/css" href="AnaYapi/avr-css.css">
-            <link rel="icon" href="avareFaviconHizilden.ico" type="image/x-icon">
-            <div data-include="AnaYapi/avrHeader.html"></div>                              
-            <div data-include="AnaYapi/avrNavbar.html"></div>
-            <div data-include="AnaYapi/avrSidebarSol.html"></div>
-            <div data-include="AnaYapi/avrSidebarSag.html"></div>
-            <div data-include="AnaYapi/avrFooter.html"></div>
-            <script type="text/javascript" src="JScodes/gold-inc-run.js"></script>
-            <script type="text/javascript" src="JScodes/avr-nav-menu-btn.js"></script>
-            * -->
-
-
-        <!-- INCLUDE AND RUN HTML SCRIPT BASI -->
+        <!-- ?? INCLUDE AND RUN HTML SCRIPT -->
         <script>
             $(function () {
                 var includes = $('[data-include]')
@@ -49,192 +54,145 @@
                 })
             })
         </script>
-        <!-- INCLUDE AND RUN HTML SCRIPT SONU -->
+
+        <!-- ^ BU SCRIPT İÇİN BODY (Navbar,Bir kod,Footer vb) İÇİNE YERLEŞTİRİLECEK PLACEHOLDER ÖRNEKLERİ -->
+        <!-- <div data-include="Gadgets/HavaDurumu.html"></div> -->
+        <!-- <div data-include="AnaYapi/avrHeader.html"></div> -->
+        <!-- <div data-include="AnaYapi/avrNavbar.html"></div> -->
+        <!-- BU ÇAĞRIYI İSE NAVBAR  İÇİNE ŞÖYLE GİRMİŞİM -->
+        <!-- <a href="IncludeOrnekleri.html" -->
+
+
+        <style>
+
+
+        </style>
 
 
     </head>
 
 
-    <body>
+    <body style="margin: 0%;">
 
+        <!-- +++======== --><!-- +++ HTML ______________ -->
 
-        <!-- ! HEADER -->
-        <header class="w3-container w3-red w3-center" style="padding:40px 16px;">
-            <h1 class="w3-margin w3-jumbo">ABAKUS</h1>
-            <p class="w3-xlarge">Bilgisayar, felsefe vb.</p>
-            <!-- <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
-            <div data-include="Gadgets/PaylasimVeYouTube.html"></div>
-        </header>
+        <div class="abks-grid-container">
 
+            <!-- +++======== --><!-- +++ HEADER GRID HTML -->
+            <div class="abks-grid-item-header">
+                <h1>ABAKUS</h1>
+                <p>Bilgisayar, Felsefe, Vb.</p>
 
-        <!-- ! NAVBAR -->
-        <!-- class="w3-top" Alttaki <div class="...." satırından çıkardım. Bunu kaldırınca Navbar Headerın altına geçti ve sticky özelliği kayboldu.-->
-        <div>
-            <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-                <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
-                    href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
-                        class="fa fa-bars"></i></a>
-                <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">ANA SAYFA</a>
-                <a href="avrSayfaKalibi.html"
-                    class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">SAYFA KALIBI</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+                <div id="abks-divInHeader">
+                    <p id="abks-divInHeader-P">Tarih, Hakkında, İletişim, Abonelik, Paylaşım, MüzVid</p>
+                </div>
             </div>
 
-            <!-- Navbar on small screens -->
-            <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
-                <!-- Buraya Ana Sayfa ayrıca girilmiyor.Yoksa 2 Ana sayfa çıkıyor.Yani yukarıdaki Ana S. @media screen olayından etkilenmeden sabit kalıyor.-->
-                <a href="avrSayfaKalibi.html" class="w3-bar-item w3-button w3-padding-large">SAYFA KALIBI</a>
-                <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
-                <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
-                <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+
+            <!-- +++======== --><!-- +++ NAVBAR GRID HTML -->
+            <div class="abks-grid-item-navbar">
+                <a href="#" title="ANA SAYFA">ANA SAYFA</a>
+                <a href="#" title="ETİK">ETİK</a>
+                <a href="#" title="HAKKIMDA">HAKKIMDA</a>
+                <a class="abks-grid-item-navbar-menu-right" href="#" title="Sağ Menu">SağMenu</a>
+                <!-- Normal Menüyü sağa yaslamak için class girmiş ve cssde yaslamış -->
             </div>
-        </div>
 
 
-        <!-- ! SIDEBAR SOL- https://www.w3schools.com/w3css/w3css_sidebar.asp -->
-        <!-- id="sidebar-sol"  -->
-        <!-- <div class=" w3-sidebar w3-bar-block w3-black w3-large " style="width:30px; padding: 5px;">
-            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-home"></i>EV</a>
-            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-search"></i></a>
-            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
-            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-globe"></i></a>
-            <a href="#" class="w3-bar-item w3-button"><i class="fa fa-trash"></i></a>
-        </div> -->
+            <!-- +++======== --><!-- +++ MAIN (YAYIN GÖVDESİ) GRID HTML -->
+            <div class="abks-grid-item-main">
+
+                <div class="abks-grid-yayn-subgrid">
+                    <div>
+                        <p>Bu yazıda kodlarımızda yer yer kullanmamız gereken Escape kodlarını bir arada özetlemeye
+                            çalıştım. </p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec finibus
+                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim lorem
+                            quis nulla lobortis faucibus. Orci varius natoque penatibus et
+                            magnis
+                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus dapibus
+                            efficitur massa, in ullamcorper ex ultrices id.
+                            Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
+                            facilisi. Phasellus ultrices convallis dolor.
+                        </p>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec finibus
+                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim lorem
+                            quis nulla lobortis faucibus. Orci varius natoque penatibus et
+                            magnis
+                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus dapibus
+                            efficitur massa, in ullamcorper ex ultrices id.
+                            Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
+                            facilisi. Phasellus ultrices convallis dolor.
+                        </p>
+
+                        <!-- <div data-include="MAKALELER/CHARACTERS-TO-ESCAPE.html"></div> -->
+                        <!-- <div data-include="MAKALELER/MAKALEM.html"></div> -->
+                        <!-- <div data-include="/mnt/TEKNE/00MASAUSTUM/ABAKUS/ABAKUS/MAKALELER/MAKALEM.html"></div> -->
+
+                        <!-- ++. Button Sade -->
+                        <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="MAKALEM.html"
+                                                title="Okumaya devam edin  " target="_blank">Okumaya Devam
+                                Edin</a></button>
+
+                        <!-- ++. Button: Araya data-include girme denemem. -->
+                        <!-- <button class="yayn-cagrı-devamıOku">
+                            <div data-include="MAKALELER/MAKALEM.html"></div><a class="link-rengim" data-include="#"
+                                                href="MAKALELER/MAKALEM.html" title="Okumaya devam edin"
+                                                target="_blank">Okumaya Devam Edin</a>
+                        </button> -->
+
+                        <!-- ++. Button: Araya data-include girme denemem: 2 -->
+                        <!-- <button class="yayn-cagrı-devamıOku link-rengim" data-include="MAKALELER/MAKALEM.html" title="Okumaya devam edin" target="_blank">Okumaya Devam Edin</button> -->
 
 
-
-
-        <!-- * Flexle iki sütun.3 sütun yap. Sol sidebarı px belirterek sabitle. -->
-        <!-- <div class="row">
-    <div class="side">
-        <h2>About Me</h2>
-        <h5>Photo of me:</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-        <h3>More Text</h3>
-        <p>Lorem ipsum dolor sit ame.</p>
-        <div class="fakeimg" style="height:60px;">Image</div><br>
-        <div class="fakeimg" style="height:60px;">Image</div><br>
-        <div class="fakeimg" style="height:60px;">Image</div>
-    </div>
-    <div class="main">
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Dec 7, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco.</p>
-        <br>
-        <h2>TITLE HEADING</h2>
-        <h5>Title description, Sep 2, 2017</h5>
-        <div class="fakeimg" style="height:200px;">Image</div>
-        <p>Some text..</p>
-        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco.</p>
-    </div>
-</div> -->
-
-        <!-- -------------------- -->
-
-
-
-        <!-- ! İÇERİK -->
-        <div class="row">
-
-            <div class="main" style="margin-left: 45px;">
-
-                <!-- ? FIRST GRID -->
-                <div class="w3-row-padding w3-padding-64 w3-container">
-                    <div class="w3-content ">
-                        <div class="w3-twothird">
-
-                            <a href="HizliSeyirUyarilari.html">HIZLI SEYİR UYARILARI</a>
-
-                        </div>
-                        <div class="w3-third w3-center">
-                            <i class="fa fa-anchor w3-padding-64 w3-text-red"></i>
-                        </div>
                     </div>
                 </div>
 
-                <!-- ? SECOND GRID  -->
-                <div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
-                    <div class="w3-content ">
-                        <div class="w3-third w3-center">
-                            <i class="fa fa-coffee w3-padding-64 w3-text-red w3-margin-right"></i>
-                        </div>
-                        <div class="w3-twothird">
-                            <h1>Lorem Ipsum</h1>
-                            <h5 class="w3-padding-32">20.5.2022 (Tarihleri başlıkla atmak daha mı iyidir?)</h5>
-                            <p class="w3-text-grey">Lorem ipsum dolor sit amet </p>
-                        </div>
+                <div class="abks-grid-yayn-subgrid">
+                    <div>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec finibus
+                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim lorem
+                            quis nulla lobortis faucibus. Orci varius natoque penatibus et
+                            magnis
+                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus dapibus
+                            efficitur massa, in ullamcorper ex ultrices id.
+                            Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
+                            facilisi. Phasellus ultrices convallis dolor.
+                        </p>
+
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="MAKALEM-2.html"
+                                                title="Okumaya devam edin  " target="_blank">Okumaya Devam
+                                Edin</a></button>
+
                     </div>
                 </div>
-                <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
-                    <h1 class="w3-margin w3-xlarge">Quote of the day: live life</h1>
+
+            </div>
+
+
+            <!-- +++======== --><!-- +++ SIDEBAR GRID HTML -->
+            <div class="abks-grid-item-sidebar">
+                <div class="abks-grd-item-sidebar-subgrd">
+                    <p>BU BİR SİDE CONTAINERDIR 3</p>
+                </div>
+
+                <div class="abks-grd-item-sidebar-subgrd">
+                    <p>BU BİR SİDE CONTAINERDIR 2</p>
+                </div>
+
+                <div class="abks-grd-item-sidebar-subgrd">
+                    <p>BU BİR SİDE CONTAINERDIR 3</p>
                 </div>
             </div>
 
 
-            <!-- ! SIDEBAR SAG -->
-            <div class="side">
-
-                <!-- ? GADGETLAR BASI-->
-                <div>
-                    <h3>HAVA DURUMU</h3>
-                    <div data-include="Gadgets/HavaDurumu.html"></div>
-                    <h3>SEYİR YARDIMCILARI</h3>
-                    <div data-include="Gadgets/SeyirYardimcilari.html"></div>
-                    <h3>ARAÇLAR</h3>
-                    <div data-include="Gadgets/Converters.html"></div>
-                </div>
-                <!-- ? GADGETLAR SONU-->
-
-                <h2>About Me</h2>
-                <h5>Photo of me:</h5>
-                <div class="fakeimg" style="height:100px;">Image</div>
-                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-                <h3>More Text</h3>
-                <p>Lorem ipsum dolor sit ame.</p>
-                <div class="fakeimg" style="height:60px;">Image</div><br>
-                <div class="fakeimg" style="height:60px;">Image</div><br>
-                <div class="fakeimg" style="height:60px;">Image</div>
+            <!-- +++======== --><!-- +++ FOOTER GRID HTML -->
+            <div class="abks-grid-item-footer">
+                <p>FOOTER</p>
             </div>
         </div>
-
-
-        <!-- ! FOOTER -->
-        <footer class="w3-container w3-padding-64 w3-center w3-opacity">
-            <div class="w3-xlarge w3-padding-32">
-                <i class="fa fa-facebook-official w3-hover-opacity"></i>
-                <i class="fa fa-instagram w3-hover-opacity"></i>
-                <i class="fa fa-snapchat w3-hover-opacity"></i>
-                <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-                <i class="fa fa-twitter w3-hover-opacity"></i>
-                <i class="fa fa-linkedin w3-hover-opacity"></i>
-            </div>
-            <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-        </footer>
-
-
-
-        <script>
-            // Used to toggle the menu on small screens when clicking on the menu button
-            function myFunction() {
-                var x = document.getElementById("navDemo");
-                if (x.className.indexOf("w3-show") == -1) {
-                    x.className += " w3-show";
-                } else {
-                    x.className = x.className.replace(" w3-show", "");
-                }
-            }
-        </script>
-
 
     </body>
-
 
 </html>
