@@ -3,7 +3,10 @@
 
     <head>
 
-        <!-- *. Özellikle 12 sütunlu yaptım ki ilerde aralara bir bölüm falan girersem kolay olsun, headerın meaderın span değerlerini vbsini değiştirmem gerekmesin ve sidebar genişliği gibi ayarları ince ayarlayabileyim. -->
+<!-- *. Özellikle 12 sütunlu yaptım ki ilerde aralara bir bölüm falan girersem kolay olsun, headerın meaderın span değerlerini vbsini değiştirmem gerekmesin ve sidebar genişliği gibi ayarları ince ayarlayabileyim. -->
+<!-- *. Makale hazırlarken MAKALELERDEKİ Belgeni̇n css ve ikon adresini bir üst klasöre iki noktayla bağlamayı unutma. Bir de abks-grid-yaynSayfasi-subgrid" haline getir subgridi.-->
+
+
         <!--
 ** İŞLİK: 
 ^ Dropdown nav and sidebar menu: İçindekiler,Konu konu,Son yayınlar vb yap. Hamburgerle.
@@ -14,14 +17,15 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
 ^ Lisans ekle 
 ^ Sidebarı hide et küçülünce ve bir hamburger menüye bağla. Avare kalıbında var bu. Sondaki JS. Uyarla bure.
 ^ Anchorlandırma. 
-^ Cssleri kısalt. Mesela headingleri birleştir. Ortakları bir başlığa ve ayrımlamaları kısa başlıklara
-h'lerim:.....10 aynı madde
-.......
-h1: sırf boy 
-mesela.
-
+^ Cssleri kısalt. Mesela headingleri birleştirdim. Ortakları bir başlığa ve ayrımlamaları kısa başlıklara
 -->
         <!-- TODO+: Sorun şu: Makale sayfasını çağrıları yerleştirrek ve main iskeletini girerek hazırladık.İskelete makalemizi girdik. Makale eğer kök dizinde değil de bir klasör içindeyse, makale içindeki includelar çalışmıyor. Header,navbar vb. ve Abakus.css dosyası gibi çağrılarını alıp çıkaramıyor içinde. Kök dizindeyse her şey tamam. Çözüm htacsess olabilir. -->
+
+        <!-- TODO: TakipEt::  İstikrar sağlamak için grid-rowlar ve Ana grid için:: align-content: center;  Main için:: justify-self: left;  Sidebar için::   justify-self: right; ekledim  -->
+        <!-- ** İŞLİK SONU:  -->
+
+
+
 
 
         <!-- +++======== --><!-- +++ BAGLAR -->
@@ -80,11 +84,11 @@ mesela.
 
             <!-- +++======== --><!-- +++ HEADER GRID HTML -->
             <div class="abks-grid-item-header">
-                <h1 class="h-yayn h1-yayn;">ABAKUS<h1>
-                        <h2 class="h-yayn h2-yayn;" style="color: white;">Bilgisayar, Felsefe, Vb.<h2>
-                                <div id="abks-divInHeader">
-                                    <p>Tarih, Hakkında, İletişim, Abonelik, Paylaşım, MüzVid</p>
-                                </div>
+                <h1 class="h-yayn h1-yayn">ABAKUS</h1>
+                <h2 class="h-yayn h2-yayn" style="color: white;">Bilgisayar, Felsefe, Vb.</h2>
+                <div id="abks-divInHeader">
+                    <p>Tarih, Hakkında, İletişim, Abonelik, Paylaşım, MüzVid</p>
+                </div>
             </div>
 
 
@@ -103,25 +107,29 @@ mesela.
 
                 <div class="abks-grid-yayn-subgrid">
                     <div class="prgrf-yayn text-yayn">
-                        <h2 class="h-yayn h2-yayn">ESCAPE CHARACTERS FOR HTML IN JASON, JAVASCRIPT, MARKDOWN, XML,
-                            XHTML, etc </h2>
+                        <h1 class="h-yayn h2-yayn">ESCAPE CHARACTERS FOR HTML IN JASON, JAVASCRIPT, MARKDOWN, XML,
+                            XHTML, etc </h1>
                         <p>In this article, I tried to summarize the Escape Characters are used in codes of several
                             languages.
-                        <p>
+                        </p>
 
-                            <button class="yayn-cagrı-devamıOku"><a class="link-rengim"
-                                                    href="MAKALELER/ESCAPE-CHARACTERS.html" title="Continue Reading"
-                                                    target="_blank">Continue Reading</a></button>
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim"
+                                                href="MAKALELER/ESCAPE-CHARACTERS.html" title="Continue Reading"
+                                                target="_blank">Continue Reading</a></button>
                     </div>
                 </div>
 
                 <div class="abks-grid-yayn-subgrid">
                     <div class="prgrf-yayn text-yayn">
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec finibus
-                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim lorem
+                        <h1 class="h-yayn h2-yayn">BAŞKA MAKALE</h1>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
+                            finibus
+                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim
+                            lorem
                             quis nulla lobortis faucibus. Orci varius natoque penatibus et
                             magnis
-                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus dapibus
+                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus
+                            dapibus
                             efficitur massa, in ullamcorper ex ultrices id.
                             Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
                             facilisi. Phasellus ultrices convallis dolor.
@@ -133,8 +141,8 @@ mesela.
 
                         <!-- ++. Button Sade -->
                         <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
-                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="ANAYAPI/0ABKS-SayfaKalibi.html"
-                                                title="Okumaya devam edin  " target="_blank">Okumaya Devam
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="MAKALEM.html"
+                                                title="Okumaya devam edin" target="_blank">Okumaya Devam
                                 Edin</a></button>
 
                         <!-- ++. Button: Araya data-include girme denemem. -->
@@ -145,12 +153,11 @@ mesela.
     </button> -->
 
                         <!-- ++. Button: Araya data-include girme denemem: 2 -->
-                        <!-- <button class="yayn-cagrı-devamıOku link-rengim" data-include="ANAYAPI/0ABKS-SayfaKalibi.html" title="Okumaya devam edin" target="_blank">Okumaya Devam Edin</button> -->
+                        <!-- <button class="yayn-cagrı-devamıOku link-rengim" data-include="MAKALELER/MAKALEM.html" title="Okumaya devam edin" target="_blank">Okumaya Devam Edin</button> -->
 
 
                     </div>
                 </div>
-
             </div>
 
 
@@ -158,7 +165,6 @@ mesela.
             <div class="abks-grid-item-sidebar">
 
                 <div class="abks-grd-item-sidebar-subgrd">
-                    
                     <div class="prgrf-yayn text-yayn">
                         <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 1</h2>
                         <p>Some Text</p>
@@ -184,6 +190,7 @@ mesela.
             <div class="abks-grid-item-footer">
                 <h1 class="h-yayn h1-yayn" style="color:white;">FOOTER</h1>
             </div>
+
         </div>
 
     </body>
