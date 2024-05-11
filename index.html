@@ -3,8 +3,10 @@
 
     <head>
 
-<!-- *. Özellikle 12 sütunlu yaptım ki ilerde aralara bir bölüm falan girersem kolay olsun, headerın meaderın span değerlerini vbsini değiştirmem gerekmesin ve sidebar genişliği gibi ayarları ince ayarlayabileyim. -->
-<!-- *. Makale hazırlarken MAKALELERDEKİ Belgeni̇n css ve ikon adresini bir üst klasöre iki noktayla bağlamayı unutma. Bir de abks-grid-yaynSayfasi-subgrid" haline getir subgridi.-->
+        <!-- *. Özellikle 12 sütunlu yaptım ki ilerde aralara bir bölüm falan girersem kolay olsun, headerın meaderın span değerlerini vbsini değiştirmem gerekmesin ve sidebar genişliği gibi ayarları ince ayarlayabileyim. -->
+        <!-- *. Makale hazırlarken MAKALELERdeki Belgeni̇n css ve ikon adresini bir üst klasöre iki noktayla bağlamayı unutma. Bir de abks-grid-yaynSayfasi-subgrid" haline getir subgridi.
+<div class="prgrf-yayn text-yayn"> içine al makaleyi. Div yerine article kullanılabilir.Aynı şekilde navbar için nav.
+-->
 
 
         <!--
@@ -21,14 +23,14 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
 -->
         <!-- TODO+: Sorun şu: Makale sayfasını çağrıları yerleştirrek ve main iskeletini girerek hazırladık.İskelete makalemizi girdik. Makale eğer kök dizinde değil de bir klasör içindeyse, makale içindeki includelar çalışmıyor. Header,navbar vb. ve Abakus.css dosyası gibi çağrılarını alıp çıkaramıyor içinde. Kök dizindeyse her şey tamam. Çözüm htacsess olabilir. -->
 
-        <!-- TODO: TakipEt::  İstikrar sağlamak için grid-rowlar ve Ana grid için:: align-content: center;  Main için:: justify-self: left;  Sidebar için::   justify-self: right; ekledim  -->
-        <!-- ** İŞLİK SONU:  -->
+        <!-- TODO: TakipEt:::.  İstikrar sağlamak için grid-rowlar ve Ana grid için:: align-content: center;  Main için:: justify-self: left;  "Sidebar için::.   "justify-self: right;" ekledim.  -->
+        <!-- **. İŞLİK SONU:  -->
 
 
 
 
 
-        <!-- +++======== --><!-- +++ BAGLAR -->
+        <!-- +++ BAGLAR -->
 
         <meta charset="utf-8">
         <meta name="description" content="DESCRIPTION">
@@ -37,34 +39,27 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
         <title>ABAKUS</title>
 
         <!-- ?? SERVİS ÇAĞIRMALARIM-->
-        <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script>
+        <!-- <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script> -->
+
+        <!-- ^ Alttakini JQuery GOLD kodu kullanırsan etkinleştir.Eski sürümü gerekirse JS dosyasında var. -->
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"
                             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
                             crossorigin="anonymous"></script>
+
+        <script src="https://www.w3schools.com/lib/w3.js"></script>
+
         <!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+        <!-- ^ Alttaki kod ABKS-w3-include-html.js yi çağırmak için.  -->
+        <!-- <script type="text/javascript" src="JSCODES/ABKS-w3-include-html.js"></script> -->
+        <!-- ^ Alttaki kod ABKS-gold-incld-run.js yi çağırmak için.  -->
+        <!-- <script type="text/javascript" src="JSCODES/gold-incld-run.js"></script> -->
+        <!-- ^ Alttaki kod ABKS-HTMLImporter.js kodunu çağırmak için -->
+        <script type="text/javascript" src="JSCODES/ABKS-HTMLImporter.js"></script>
+
         <link rel="stylesheet" type="text/css" href="ABKS-CSS.css">
         <link rel="icon" href="ANAYAPI/ABKS.Faviconum-128x128-Yuvarlak.png" type="image/x-icon">
 
-        <!-- ^ Alttaki kod aşağıdaki INCLUDE AND RUN HTML SCRIPT'ini externaldan kullanırsan çağırmak için -->
-        <!-- <script type="text/javascript" src="JScodes/gold-incld-run.js"></script> -->
 
-        <!-- ?? INCLUDE AND RUN HTML SCRIPT -->
-        <script>
-            $(function () {
-                var includes = $('[data-include]')
-                $.each(includes, function () {
-                    var file = $(this).data('include')
-                    $(this).load(file)
-                })
-            })
-        </script>
-
-        <!-- ^ BU SCRIPT İÇİN BODY (Navbar,Bir kod,Footer vb) İÇİNE YERLEŞTİRİLECEK PLACEHOLDER ÖRNEKLERİ -->
-        <!-- <div data-include="Gadgets/HavaDurumu.html"></div> -->
-        <!-- <div data-include="AnaYapi/avrHeader.html"></div> -->
-        <!-- <div data-include="AnaYapi/avrNavbar.html"></div> -->
-        <!-- BU ÇAĞRIYI İSE NAVBAR  İÇİNE ŞÖYLE GİRMİŞİM -->
-        <!-- <a href="IncludeOrnekleri.html" -->
 
 
         <style>
@@ -78,11 +73,11 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
 
     <body style="margin: 0%;">
 
-        <!-- +++======== --><!-- +++ HTML ______________ -->
+        <!-- +++ HTML ______________ -->
 
         <div class="abks-grid-container">
 
-            <!-- +++======== --><!-- +++ HEADER GRID HTML -->
+            <!-- +++ HEADER GRID HTML -->
             <div class="abks-grid-item-header">
                 <h1 class="h-yayn h1-yayn">ABAKUS</h1>
                 <h2 class="h-yayn h2-yayn" style="color: white;">Bilgisayar, Felsefe, Vb.</h2>
@@ -92,9 +87,9 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
             </div>
 
 
-            <!-- +++======== --><!-- +++ NAVBAR GRID HTML -->
+            <!-- +++ NAVBAR GRID HTML -->
             <div class="abks-grid-item-navbar">
-                <a href="#" title="ANA SAYFA">ANA SAYFA</a>
+                <a href="index.html" title="ANA SAYFA">ANA SAYFA</a>
                 <a href="#" title="ETİK">ETİK</a>
                 <a href="#" title="HAKKIMDA">HAKKIMDA</a>
                 <a class="abks-grid-item-navbar-menu-right" href="#" title="Sağ Menu">SağMenu</a>
@@ -102,68 +97,106 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
             </div>
 
 
-            <!-- +++======== --><!-- +++ MAIN (YAYIN GÖVDESİ) GRID HTML -->
-            <div class="abks-grid-item-main">
+            <!-- +++ MAIN (YAYINLAR ÖZETİ GÖVDESİ) GRID HTML -->
+            <div class="abks-grid-item-main prgrf-yayn text-yayn">
 
-                <div class="abks-grid-yayn-subgrid">
-                    <div class="prgrf-yayn text-yayn">
-                        <h1 class="h-yayn h2-yayn">ESCAPE CHARACTERS FOR HTML IN JASON, JAVASCRIPT, MARKDOWN, XML,
-                            XHTML, etc </h1>
-                        <p>In this article, I tried to summarize the Escape Characters are used in codes of several
-                            languages.
-                        </p>
+                <!-- ++. --------- HTML importer JS ile 1--------------- -->
 
-                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim"
-                                                href="MAKALELER/ESCAPE-CHARACTERS.html" title="Continue Reading"
-                                                target="_blank">Continue Reading</a></button>
+                <div class="abks-grid-yaynlr-subgrid">
+                    <!-- <div class = "">  ::: Buradaki divlerin class içini yukarı Mainin divindeki classa kattım. Şimdi her yayına ayrı girmeye gerek kalmadı. Sorunsuz işliyor. Şimdilik bu divinki örnek olarak burada kalsın, sorun olursa hatırlatıcı olarak. -->
+                    <h1 class = "h-yayn h1-yayn"><a class  = "link-rengim" href = "MAKALELER/ESCAPE-CHARACTERS.html"
+                        title = "ESCAPE-CHARACTERS" target = "_blank">ESCAPE CHARACTERS FOR HTML
+                            IN
+                            JASON,
+                            JAVASCRIPT, MARKDOWN, XML,
+                            XHTML, etc.</a>
+                    </h1>
+                    <p>In this article, I tried to summarize the Escape Characters are used in codes of several
+                        languages.
+                    </p>
+
+                    <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
+                    <div class = "devamıOku-link"><a class = "link-rengim" href = "MAKALELER/ESCAPE-CHARACTERS.html"
+                         title = "Continue Reading" target = "_blank">Continue Reading</a>
+                    </div>
+                </div>
+                <!-- </div> -->
+
+                <!-- ++. --------- HTML importer JS ile 2------------ -->
+
+                <div class="abks-grid-yaynlr-subgrid">
+                    <h1 class  = "h-yayn h1-yayn"><a class = "link-rengim" href = "MAKALELER/-Ornek-MKL-JSimporter'lı.html"
+                        title  = "-Ornek-MKL-JSimporter'lı.html"
+                        target = "_blank">MKL-JSimporter'lı.html</a>
+                    </h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
+                        finibus
+                        turpis posuere non. Proin scelerisque quis nulla vehicula interdum.
+                    </p>
+
+                    <div class = "devamıOku-link"><a class   = "link-rengim" href = "-Ornek-MAKALELER/MKL-JSimporter'lı.html"
+                         title = "Okumaya devam edin" target = "_blank">Okumaya Devam
+                            Edin</a>
                     </div>
                 </div>
 
-                <div class="abks-grid-yayn-subgrid">
-                    <div class="prgrf-yayn text-yayn">
-                        <h1 class="h-yayn h2-yayn">BAŞKA MAKALE</h1>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
-                            finibus
-                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim
-                            lorem
-                            quis nulla lobortis faucibus. Orci varius natoque penatibus et
-                            magnis
-                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus
-                            dapibus
-                            efficitur massa, in ullamcorper ex ultrices id.
-                            Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
-                            facilisi. Phasellus ultrices convallis dolor.
-                        </p>
+                <!-- ++. --------- Include DENEYLERİ ------------ -->
 
-                        <!-- <div data-include="MAKALELER/CHARACTERS-TO-ESCAPE.html"></div> -->
-                        <!-- <div data-include="MAKALELER/MAKALEM.html"></div> -->
-                        <!-- <div data-include="/mnt/TEKNE/00MASAUSTUM/ABAKUS/ABAKUS/MAKALELER/MAKALEM.html"></div> -->
-
-                        <!-- ++. Button Sade -->
-                        <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
-                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="MAKALEM.html"
-                                                title="Okumaya devam edin" target="_blank">Okumaya Devam
-                                Edin</a></button>
-
-                        <!-- ++. Button: Araya data-include girme denemem. -->
-                        <!-- <button class="yayn-cagrı-devamıOku">
-        <div data-include="MAKALELER/MAKALEM.html"></div><a class="link-rengim" data-include="#"
-                            href="MAKALELER/MAKALEM.html" title="Okumaya devam edin"
-                            target="_blank">Okumaya Devam Edin</a>
-    </button> -->
-
-                        <!-- ++. Button: Araya data-include girme denemem: 2 -->
-                        <!-- <button class="yayn-cagrı-devamıOku link-rengim" data-include="MAKALELER/MAKALEM.html" title="Okumaya devam edin" target="_blank">Okumaya Devam Edin</button> -->
+                <div class="abks-grid-yaynlr-subgrid">
+                    <h1 class  = "h-yayn h1-yayn"><a class = "link-rengim" href = "-IncludeDENEYS.html" title = "IncludeDENEYS"
+                        target = "_blank">Yapıştırmalık.html</a>
+                    </h1>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
+                        finibus
+                        turpis posuere non. Proin scelerisque quis nulla vehicula interdum.
+                    </p>
 
 
+                    <!-- !! ------DOSYA YOLU VE DÜĞMEYİ, LİNKİ BİRLEŞTİREREK--- -->
+                    <div w3-include-html="GADGETS/FirtinaTakvimi.html"></div>
+                    <div w3-include-html="MAKALELER/13-CONVERTER.html"></div>
+
+
+
+                    <div>
+                        <li id   = "tablom-tiklink-list"><a id = "tablom-tiklink" title = "Fırtına Takvimini Aç"
+                            href = "GADGETS/FirtinaTakvimi.html">"FIRTINA TAKVİMİ"</a></li>
+                    </div>
+
+                    <!-- !! -------------------- -->
+
+
+                    <div class = "devamıOku-link"><a class   = "link-rengim" href = "IncludeDENEYS.html"
+                         title = "Okumaya devam edin" target = "_blank">Okumaya Devam
+                            Edin</a>
                     </div>
                 </div>
+
+                <!-- ++. --------ABKS-gold-incld-run-Ile--------- -->
+
+                <!-- <div class="abks-grid-yaynlr-subgrid">
+                                <div class="prgrf-yayn text-yayn">
+                                    <h1 class="h-yayn h1-yayn"><a class="link-rengim" href="MAKALELER/-Ornek-MKL-ABKS-gold-incld-run-Ile.html"
+                                                            title="-Ornek-MKL-ABKS-gold-incld-run-Ile" target="_blank">MKL-ABKS-gold-incld-run-Ile</a>
+                                    </h1>
+                                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
+                                        finibus
+                                        turpis posuere non. Proin scelerisque quis nulla vehicula interdum.
+                                    </p>
+                            
+                                    <div class="devamıOku-link"><a class="link-rengim" href="MAKALELER/-Ornek-MKL-ABKS-gold-incld-run-Ile.html"
+                                                            title="Okumaya devam edin" target="_blank">Okumaya Devam
+                                            Edin</a>
+                                    </div>
+                                </div>
+                            </div> -->
+
+                <!-- ++. ----- -->
             </div>
 
 
-            <!-- +++======== --><!-- +++ SIDEBAR GRID HTML -->
+            <!-- +++ SIDEBAR GRID HTML -->
             <div class="abks-grid-item-sidebar">
-
                 <div class="abks-grd-item-sidebar-subgrd">
                     <div class="prgrf-yayn text-yayn">
                         <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 1</h2>
@@ -186,12 +219,23 @@ BU ÇAĞRI ESKİ NAVBARI KÜÇÜK EKRANLARDA HAMBURGER MENU YAPAN JS DOSYASINI �
                 </div>
             </div>
 
+
             <!-- +++======== --><!-- +++ FOOTER GRID HTML -->
             <div class="abks-grid-item-footer">
                 <h1 class="h-yayn h1-yayn" style="color:white;">FOOTER</h1>
             </div>
 
         </div>
+
+        <!-- ++ ---------------- -->
+        <script>
+            w3.includeHTML(myCallback);
+
+            function myCallback() {
+                // code that has to wait goes here
+            }
+        </script>
+        <!-- ++ --------------- -->
 
     </body>
 

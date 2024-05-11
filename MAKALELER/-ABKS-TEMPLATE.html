@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="description" content="DESCRIPTION">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <title>-ABKS-TEMPLATE</title>
+
+        <!-- ?? SERVİS ÇAĞIRMALARIM-->
+        <!-- <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script> -->
+
+        <!-- ^ Alttakini JQuery GOLD kodu kullanırsan etkinleştir.Eski sürümü gerekirse JS dosyasında var. -->
+        <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                            crossorigin="anonymous"></script> -->
+
+        <!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+        <!-- ^ Alttaki kod ABKS-w3-include-html.js yi çağırmak için.  -->
+        <!-- <script type="text/javascript" src="../JSCODES/ABKS-w3-include-html.js"></script> -->
+        <!-- ^ Alttaki kod ABKS-gold-incld-run.js yi çağırmak için.  -->
+        <!-- <script type="text/javascript" src="../JSCODES/gold-incld-run.js"></script> -->
+        <!-- ^ Alttaki kod ABKS-HTMLImporter.js kodunu çağırmak için -->
+        <script type="text/javascript" src="../JSCODES/ABKS-HTMLImporter.js"></script>
+
+        <link type="text/css" href="../ABKS-CSS.css" rel="stylesheet">
+        <link type="image/x-icon" href="..ANAYAPI/ABKS.Faviconum-128x128-Yuvarlak.png" rel="icon">
+
+
+        <style>
+
+
+        </style>
+
+    </head>
+
+    <body style="margin: 0%;">
+
+
+        <!-- * Buradaki kalıpları bir makale gibi düşün. Yolları falan MAKALELER Dizinindeki bir makaleye göre hazırladım.Bu yapıyı farklı bir dizinden kullanırsan yukarıdaki link bağlarında ABKS-CSS.css ve Favicon yolunu uyarlamayı unutma. -->
+        <!-- * Makaleyi footer vb çağrıları kullanmadan doğrudan index dosyası kopyası içine basarsan: Makalemiz MAKALELER alt dizininde bulunacağı için, bu index kopyası içindeki navbar ana sayfa linkini şöyle düzenle: href="../index.html"   -->
+        <!-- * W3cnin  ABKS-w3-include-html JS kodunu da kullanabilirsin. -->
+        
+
+
+
+        <!-- ++. MKL-JSimporter'lı KALIP. Sorunsuz çalişiyor. Bunu kullan -->
+
+<!-- todo: TAKİP ET: Java scrip kodlarıyla çağrılarda crossorigin sorunları çıkabiliyormuş. Onun için jqyery gibi bir servisel kod kullanmak öneriliyor.  -->
+
+        <!-- ABKS-HTMLImporter
+  https://stackoverflow.com/questions/36387676/is-it-possible-to-reuse-html-like-a-template-on-multiple-pages
+  
+  So, after a long time I actually found a way to do this using AJAX. HTML Imports are a great solution, but the support across browsers is severely lacking as of 04/2017, so I came up with a better solution. Here's my source code: Yukarıdaki kod yani.
+  My function will actually replace the script tag used to call the import with the contents of my-template.html and it will execute any scripts found in the template. No special format is required for the template, just write the HTML you want to appear in your code.
+  
+  Now when I want to import HTML into another document, all I have to do is add a script tag like this: Çağırmak istediğinin adını gir parantez içine ve belireceği yere koy alttaki scripti..
+  
+  ^ <script>HTMLImporter.import("my-template.html");</script>
+  
+  You put the script into a separate file and use a script tag with src="separetFile.js". Then you only need to add two script tags to each html file. Bunu da heade gir. UYARLAYINCA BANA: 
+  
+  ^ <script type="text/javascript" src="JSCODES/ABKS-HTMLImporter.js"></script> -->
+
+
+        <!-- ? --------------------- -->
+        <div class="abks-grid-container">
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Header.html");</script>
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Navbar.html");</script>
+            <!-- <script>HTMLImporter.import("../ANAYAPI/ABKS-Main.html");</script> -->
+            <!-- <script>HTMLImporter.import("../ANAYAPI/ABKS-MainSubgrid.html");</script> -->
+            <!-- <script>HTMLImporter.import("../ANAYAPI/ABKS-Subgrid-YaynSayfasi.html");</script> -->
+
+            <div class="abks-grid-main-mkl prgrf-yayn text-yayn">
+
+                <div>
+                    <h1 class="h-yayn h1-yayn">MKL-JSimporter'lı.html</h1>
+                    <h5>7.Mart.2024</h5>
+
+                    <p>Ex sit anim non ipsum labore id ut esse fugiat. Nisi elit tempor
+                        magna id
+                        irure laboris magna do amet aliquip dolore duis. Ut quis aliqua ex magna officia.
+                    </p>
+                </div>
+
+            </div>
+
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Sidebar.html");</script>
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Footer.html");</script>
+        </div>
+        <!-- ? --------------------- -->
+
+
+
+
+
+        <!-- ++ GOLD JAVAQUERY KODU İLE ÇAĞRI. JSCODES dizininde ABKS-gold-incld-run.js dosyası. Çalışıyor ama bu kodla sidebar hep mainin altına kaçıyor. Hiç bir şekilde yan yana getiremedim. Ya da sütunlar birbirine giriyor. Bu yüzden diğer JS kodunu kullan. -->
+
+        <!-- ^ ABKS-gold-incld-run.js yi çağırmak için. INCLUDE AND RUN GOLD HTML SCRIPT'ini doğrudan kullandım genellikle. Doğrudan değil, externaldan kullanırsan diye.
+<script type="text/javascript" src="JSCODES/gold-incld-run.js"></script>
+
+^ BU SCRIPT İÇİN BODY (Navbar,Bir kod,Footer vb) İÇİNE YERLEŞTİRİLECEK PLACEHOLDER ÖRNEKLERİ
+    <div data-include="Gadgets/HavaDurumu.html"></div>
+    <div data-include="AnaYapi/avrHeader.html"></div>
+    BU ÇAĞRIYI İSE NAVBAR  İÇİNE ŞÖYLE GİRMİŞİM
+    <a href="IncludeOrnekleri.html"  -->
+
+
+        <!-- ? --------------------- -->
+        <!-- <div class="abks-grid-container"> -->
+
+        <!-- ! ANA GRID CONTAINER -->
+        <!-- <div data-include="../ANAYAPI/ABKS-AnaGridContainer.html"></div> -->
+
+        <!-- ! HEADER -->
+        <div data-include="../ANAYAPI/ABKS-Header.html"></div>
+
+        <!-- ! NAVBAR -->
+        <div data-include="../ANAYAPI/ABKS-Navbar.html"></div>
+
+        <!-- ! MAIN - İÇERİK -->
+        <!-- <div data-include="../ANAYAPI/ABKS-Main.html"></div> -->
+
+
+        <!-- <div class="abks-grid-container"> -->
+
+        <div class="abks-grid-main-mkl prgrf-yayn text-yayn">
+
+            <div>
+                <h1 class="h-yayn h1-yayn">MKL-ABKS-gold-incld-run-Ile</h1>
+                <h5>7.Mart.2024</h5>
+
+                <p>Ex sit anim non ipsum labore id ut esse fugiat. Nisi elit tempor
+                    magna id
+                    irure laboris magna do amet aliquip dolore duis.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- ! SIDEBAR -->
+        <div data-include="../ANAYAPI/ABKS-Sidebar.html"></div>
+
+        <!-- ! FOOTER -->
+        <div data-include="../ANAYAPI/ABKS-Footer.html"></div>
+
+        <!-- </div> -->
+        <!-- ? -------------------------------- -->
+
+    </body>
+
+</html>

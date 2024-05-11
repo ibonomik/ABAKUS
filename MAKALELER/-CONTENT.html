@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="description" content="DESCRIPTION">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="IE=edge" http-equiv="X-UA-Compatible">
+<title>TITLE</title>
+
+<!-- ?? SERVİS ÇAĞIRMALARIM-->
+<script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="crossorigin="anonymous"></script>
+<!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+<link rel="stylesheet" type="text/css" href="ABKS-CSS.css
+ <link rel="icon" href="ABKS.Faviconum-128x128-Yuvarlak.png" type="image/x-icon"> rel="icon">
+
+   <!-- ?? INCLUDE AND RUN HTML SCRIPT -->
+   <script>
+    $(function () {
+        var includes = $('[data-include]')
+        $.each(includes, function () {
+            var file = $(this).data('include')
+            $(this).load(file)
+        })
+    })
+</script>
+
+<!-- Bu script yukarıdaki INCLUDE AND RUN HTML SCRIPT'in JSCODES dizinindeki JS dosyası halini buraya çağırmak içindir. Bu  da kullanılabiliyor, OK yani. Bunu etkinleştirirsen yukarıdaki scripti uncomment edebilirsin:::::   <script type="text/javascript" src="JScodes/ABKS-gold-inc-run.js"></script> -->
+
+
+<style>
+
+</style>
+
+</head>
+
+<body style="margin: 0%;">
+
+    <!-- CONTENT dizini yayınlanan makalelerin bir liste halinde bir arada bulunması ve gerektiğinde bu placeholderlarla hızlı düzenlemeler yapılabilmesi içindir. Linkler kök dizinde durmaklığa ayarlı.  -->
+
+
+    <div data-include="MAKALELER/ESCAPE-CHARACTERS"></div>
+    <div data-include="MAKALELER/MAKALEM-1"></div>
+
+
+</body>
+
+</html>

@@ -12,387 +12,1443 @@
         <title>ESCAPE CHARACTERS FOR HTML IN JASON, JAVASCRIPT, MARKDOWN, XML, XHTML, etc.</title>
 
         <!-- ?? SERVİS ÇAĞIRMALARIM-->
-        <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-                            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-                            crossorigin="anonymous"></script>
-
-                            <!-- Markdown Enhancer convert sırasında eklemiş bu linki -->
-                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+        <!-- <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script> -->
 
         <!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+        <!-- ^ Alttaki kod ABKS-HTMLImporter.js kodunu çağırmak için -->
+        <script type="text/javascript" src="../JSCODES/ABKS-HTMLImporter.js"></script>
+
         <link rel="stylesheet" type="text/css" href="../ABKS-CSS.css">
         <link rel="icon" href="../ANAYAPI/ABKS.Faviconum-128x128-Yuvarlak.png" type="image/x-icon">
 
-        <!-- ^ Alttaki kod aşağıdaki INCLUDE AND RUN HTML SCRIPT'ini externaldan kullanırsan çağırmak için -->
-        <!-- <script type="text/javascript" src="JScodes/gold-incld-run.js"></script> -->
 
-        <!-- ?? INCLUDE AND RUN HTML SCRIPT -->
-        <script>
-            $(function () {
-                var includes = $('[data-include]')
-                $.each(includes, function () {
-                    var file = $(this).data('include')
-                    $(this).load(file)
-                })
-            })
 
-        </script>
+
+
+
 
         <style>
+            code[class*=language-],
+            pre[class*=language-] {
+                color: #333;
+                background: 0 0;
+                font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+                text-align: left;
+                white-space: pre;
+                word-spacing: normal;
+                word-break: normal;
+                word-wrap: normal;
+                line-height: 1.4;
+                -moz-tab-size: 8;
+                -o-tab-size: 8;
+                tab-size: 8;
+                -webkit-hyphens: none;
+                -moz-hyphens: none;
+                -ms-hyphens: none;
+                hyphens: none
+            }
 
- code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-                        /* Please visit the URL below for more information: */
-                        /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+            pre[class*=language-] {
+                padding: .8em;
+                overflow: auto;
+                border-radius: 3px;
+                background: #f5f5f5
+            }
+
+            :not(pre)>code[class*=language-] {
+                padding: .1em;
+                border-radius: .3em;
+                white-space: normal;
+                background: #f5f5f5
+            }
+
+            .token.blockquote,
+            .token.comment {
+                color: #969896
+            }
+
+            .token.cdata {
+                color: #183691
+            }
+
+            .token.doctype,
+            .token.macro.property,
+            .token.punctuation,
+            .token.variable {
+                color: #333
+            }
+
+            .token.builtin,
+            .token.important,
+            .token.keyword,
+            .token.operator,
+            .token.rule {
+                color: #a71d5d
+            }
+
+            .token.attr-value,
+            .token.regex,
+            .token.string,
+            .token.url {
+                color: #183691
+            }
+
+            .token.atrule,
+            .token.boolean,
+            .token.code,
+            .token.command,
+            .token.constant,
+            .token.entity,
+            .token.number,
+            .token.property,
+            .token.symbol {
+                color: #0086b3
+            }
+
+            .token.prolog,
+            .token.selector,
+            .token.tag {
+                color: #63a35c
+            }
+
+            .token.attr-name,
+            .token.class,
+            .token.class-name,
+            .token.function,
+            .token.id,
+            .token.namespace,
+            .token.pseudo-class,
+            .token.pseudo-element,
+            .token.url-reference .token.variable {
+                color: #795da3
+            }
+
+            .token.entity {
+                cursor: help
+            }
+
+            .token.title,
+            .token.title .token.punctuation {
+                font-weight: 700;
+                color: #1d3e81
+            }
+
+            .token.list {
+                color: #ed6a43
+            }
+
+            .token.inserted {
+                background-color: #eaffea;
+                color: #55a532
+            }
+
+            .token.deleted {
+                background-color: #ffecec;
+                color: #bd2c00
+            }
+
+            .token.bold {
+                font-weight: 700
+            }
+
+            .token.italic {
+                font-style: italic
+            }
+
+            .language-json .token.property {
+                color: #183691
+            }
+
+            .language-markup .token.tag .token.punctuation {
+                color: #333
+            }
+
+            .language-css .token.function,
+            code.language-css {
+                color: #0086b3
+            }
+
+            .language-yaml .token.atrule {
+                color: #63a35c
+            }
+
+            code.language-yaml {
+                color: #183691
+            }
+
+            .language-ruby .token.function {
+                color: #333
+            }
+
+            .language-markdown .token.url {
+                color: #795da3
+            }
+
+            .language-makefile .token.symbol {
+                color: #795da3
+            }
+
+            .language-makefile .token.variable {
+                color: #183691
+            }
+
+            .language-makefile .token.builtin {
+                color: #0086b3
+            }
+
+            .language-bash .token.keyword {
+                color: #0086b3
+            }
+
+            pre[data-line] {
+                position: relative;
+                padding: 1em 0 1em 3em
+            }
+
+            pre[data-line] .line-highlight-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                background-color: transparent;
+                display: block;
+                width: 100%
+            }
+
+            pre[data-line] .line-highlight {
+                position: absolute;
+                left: 0;
+                right: 0;
+                padding: inherit 0;
+                margin-top: 1em;
+                background: hsla(24, 20%, 50%, .08);
+                background: linear-gradient(to right, hsla(24, 20%, 50%, .1) 70%, hsla(24, 20%, 50%, 0));
+                pointer-events: none;
+                line-height: inherit;
+                white-space: pre
+            }
+
+            pre[data-line] .line-highlight:before,
+            pre[data-line] .line-highlight[data-end]:after {
+                content: attr(data-start);
+                position: absolute;
+                top: .4em;
+                left: .6em;
+                min-width: 1em;
+                padding: 0 .5em;
+                background-color: hsla(24, 20%, 50%, .4);
+                color: #f4f1ef;
+                font: bold 65%/1.5 sans-serif;
+                text-align: center;
+                vertical-align: .3em;
+                border-radius: 999px;
+                text-shadow: none;
+                box-shadow: 0 1px #fff
+            }
+
+            pre[data-line] .line-highlight[data-end]:after {
+                content: attr(data-end);
+                top: auto;
+                bottom: .4em
+            }
+
+            html body {
+                font-family: 'Helvetica Neue', Helvetica, 'Segoe UI', Arial, freesans, sans-serif;
+                font-size: 16px;
+                line-height: 1.6;
+                color: #333;
+                background-color: #fff;
+                overflow: initial;
+                box-sizing: border-box;
+                word-wrap: break-word
+            }
+
+            html body>:first-child {
+                margin-top: 0
+            }
+
+            html body h1,
+            html body h2,
+            html body h3,
+            html body h4,
+            html body h5,
+            html body h6 {
+                line-height: 1.2;
+                margin-top: 1em;
+                margin-bottom: 16px;
+                color: #000
+            }
+
+            html body h1 {
+                font-size: 2.25em;
+                font-weight: 300;
+                padding-bottom: .3em
+            }
+
+            html body h2 {
+                font-size: 1.75em;
+                font-weight: 400;
+                padding-bottom: .3em
+            }
+
+            html body h3 {
+                font-size: 1.5em;
+                font-weight: 500
+            }
+
+            html body h4 {
+                font-size: 1.25em;
+                font-weight: 600
+            }
+
+            html body h5 {
+                font-size: 1.1em;
+                font-weight: 600
+            }
+
+            html body h6 {
+                font-size: 1em;
+                font-weight: 600
+            }
+
+            html body h1,
+            html body h2,
+            html body h3,
+            html body h4,
+            html body h5 {
+                font-weight: 600
+            }
+
+            html body h5 {
+                font-size: 1em
+            }
+
+            html body h6 {
+                color: #5c5c5c
+            }
+
+            html body strong {
+                color: #000
+            }
+
+            html body del {
+                color: #5c5c5c
+            }
+
+            html body a:not([href]) {
+                color: inherit;
+                text-decoration: none
+            }
+
+            html body a {
+                color: #08c;
+                text-decoration: none
+            }
+
+            html body a:hover {
+                color: #00a3f5;
+                text-decoration: none
+            }
+
+            html body img {
+                max-width: 100%
+            }
+
+            html body>p {
+                margin-top: 0;
+                margin-bottom: 16px;
+                word-wrap: break-word
+            }
+
+            html body>ol,
+            html body>ul {
+                margin-bottom: 16px
+            }
+
+            html body ol,
+            html body ul {
+                padding-left: 2em
+            }
+
+            html body ol.no-list,
+            html body ul.no-list {
+                padding: 0;
+                list-style-type: none
+            }
+
+            html body ol ol,
+            html body ol ul,
+            html body ul ol,
+            html body ul ul {
+                margin-top: 0;
+                margin-bottom: 0
+            }
+
+            html body li {
+                margin-bottom: 0
+            }
+
+            html body li.task-list-item {
+                list-style: none
+            }
+
+            html body li>p {
+                margin-top: 0;
+                margin-bottom: 0
+            }
+
+            html body .task-list-item-checkbox {
+                margin: 0 .2em .25em -1.8em;
+                vertical-align: middle
+            }
+
+            html body .task-list-item-checkbox:hover {
+                cursor: pointer
+            }
+
+            html body blockquote {
+                margin: 16px 0;
+                font-size: inherit;
+                padding: 0 15px;
+                color: #5c5c5c;
+                background-color: #f0f0f0;
+                border-left: 4px solid #d6d6d6
+            }
+
+            html body blockquote>:first-child {
+                margin-top: 0
+            }
+
+            html body blockquote>:last-child {
+                margin-bottom: 0
+            }
+
+            html body hr {
+                height: 4px;
+                margin: 32px 0;
+                background-color: #d6d6d6;
+                border: 0 none
+            }
+
+            html body table {
+                margin: 10px 0 15px 0;
+                border-collapse: collapse;
+                border-spacing: 0;
+                display: block;
+                width: 100%;
+                overflow: auto;
+                word-break: normal;
+                word-break: keep-all
+            }
+
+            html body table th {
+                font-weight: 700;
+                color: #000
+            }
+
+            html body table td,
+            html body table th {
+                border: 1px solid #d6d6d6;
+                padding: 6px 13px
+            }
+
+            html body dl {
+                padding: 0
+            }
+
+            html body dl dt {
+                padding: 0;
+                margin-top: 16px;
+                font-size: 1em;
+                font-style: italic;
+                font-weight: 700
+            }
+
+            html body dl dd {
+                padding: 0 16px;
+                margin-bottom: 16px
+            }
+
+            html body code {
+                font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+                font-size: .85em;
+                color: #000;
+                background-color: #f0f0f0;
+                border-radius: 3px;
+                padding: .2em 0
+            }
+
+            html body code::after,
+            html body code::before {
+                letter-spacing: -.2em;
+                content: '\00a0'
+            }
+
+            html body pre>code {
+                padding: 0;
+                margin: 0;
+                word-break: normal;
+                white-space: pre;
+                background: 0 0;
+                border: 0
+            }
+
+            html body .highlight {
+                margin-bottom: 16px
+            }
+
+            html body .highlight pre,
+            html body pre {
+                padding: 1em;
+                overflow: auto;
+                line-height: 1.45;
+                border: #d6d6d6;
+                border-radius: 3px
+            }
+
+            html body .highlight pre {
+                margin-bottom: 0;
+                word-break: normal
+            }
+
+            html body pre code,
+            html body pre tt {
+                display: inline;
+                max-width: initial;
+                padding: 0;
+                margin: 0;
+                overflow: initial;
+                line-height: inherit;
+                word-wrap: normal;
+                background-color: transparent;
+                border: 0
+            }
+
+            html body pre code:after,
+            html body pre code:before,
+            html body pre tt:after,
+            html body pre tt:before {
+                content: normal
+            }
+
+            html body blockquote,
+            html body dl,
+            html body ol,
+            html body p,
+            html body pre,
+            html body ul {
+                margin-top: 0;
+                margin-bottom: 16px
+            }
+
+            html body kbd {
+                color: #000;
+                border: 1px solid #d6d6d6;
+                border-bottom: 2px solid #c7c7c7;
+                padding: 2px 4px;
+                background-color: #f0f0f0;
+                border-radius: 3px
+            }
+
+            @media print {
+                html body {
+                    background-color: #fff
+                }
+
+                html body h1,
+                html body h2,
+                html body h3,
+                html body h4,
+                html body h5,
+                html body h6 {
+                    color: #000;
+                    page-break-after: avoid
+                }
+
+                html body blockquote {
+                    color: #5c5c5c
+                }
+
+                html body pre {
+                    page-break-inside: avoid
+                }
+
+                html body table {
+                    display: table
+                }
+
+                html body img {
+                    display: block;
+                    max-width: 100%;
+                    max-height: 100%
+                }
+
+                html body code,
+                html body pre {
+                    word-wrap: break-word;
+                    white-space: pre
+                }
+            }
+
+            .markdown-preview {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box
+            }
+
+            .markdown-preview ul {
+                list-style: disc
+            }
+
+            .markdown-preview ul ul {
+                list-style: circle
+            }
+
+            .markdown-preview ul ul ul {
+                list-style: square
+            }
+
+            .markdown-preview ol {
+                list-style: decimal
+            }
+
+            .markdown-preview ol ol,
+            .markdown-preview ul ol {
+                list-style-type: lower-roman
+            }
+
+            .markdown-preview ol ol ol,
+            .markdown-preview ol ul ol,
+            .markdown-preview ul ol ol,
+            .markdown-preview ul ul ol {
+                list-style-type: lower-alpha
+            }
+
+            .markdown-preview .newpage,
+            .markdown-preview .pagebreak {
+                page-break-before: always
+            }
+
+            .markdown-preview pre.line-numbers {
+                position: relative;
+                padding-left: 3.8em;
+                counter-reset: linenumber
+            }
+
+            .markdown-preview pre.line-numbers>code {
+                position: relative
+            }
+
+            .markdown-preview pre.line-numbers .line-numbers-rows {
+                position: absolute;
+                pointer-events: none;
+                top: 1em;
+                font-size: 100%;
+                left: 0;
+                width: 3em;
+                letter-spacing: -1px;
+                border-right: 1px solid #999;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none
+            }
+
+            .markdown-preview pre.line-numbers .line-numbers-rows>span {
+                pointer-events: none;
+                display: block;
+                counter-increment: linenumber
+            }
+
+            .markdown-preview pre.line-numbers .line-numbers-rows>span:before {
+                content: counter(linenumber);
+                color: #999;
+                display: block;
+                padding-right: .8em;
+                text-align: right
+            }
+
+            .markdown-preview .mathjax-exps .MathJax_Display {
+                text-align: center !important
+            }
+
+            .markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group {
+                display: none
+            }
+
+            .markdown-preview:not([data-for=preview]) .code-chunk .status {
+                display: none
+            }
+
+            .markdown-preview:not([data-for=preview]) .code-chunk .output-div {
+                margin-bottom: 16px
+            }
+
+            .markdown-preview .md-toc {
+                padding: 0
+            }
+
+            .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link {
+                display: inline;
+                padding: .25rem 0
+            }
+
+            .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,
+            .markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p {
+                display: inline
+            }
+
+            .markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+                font-weight: 800
+            }
+
+            .scrollbar-style::-webkit-scrollbar {
+                width: 8px
+            }
+
+            .scrollbar-style::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: transparent
+            }
+
+            .scrollbar-style::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background-color: rgba(150, 150, 150, .66);
+                border: 4px solid rgba(150, 150, 150, .66);
+                background-clip: content-box
+            }
+
+            html body[for=html-export]:not([data-presentation-mode]) {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                margin: 0;
+                padding: 0;
+                overflow: auto
+            }
+
+            html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                position: relative;
+                top: 0;
+                min-height: 100vh
+            }
+
+            @media screen and (min-width:914px) {
+                html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                    padding: 2em calc(50% - 457px + 2em)
+                }
+            }
+
+            @media screen and (max-width:914px) {
+                html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                    padding: 2em
+                }
+            }
+
+            @media screen and (max-width:450px) {
+                html body[for=html-export]:not([data-presentation-mode]) .markdown-preview {
+                    font-size: 14px !important;
+                    padding: 1em
+                }
+            }
+
+            @media print {
+                html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+                    display: none
+                }
+            }
+
+            html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn {
+                position: fixed;
+                bottom: 8px;
+                left: 8px;
+                font-size: 28px;
+                cursor: pointer;
+                color: inherit;
+                z-index: 99;
+                width: 32px;
+                text-align: center;
+                opacity: .4
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn {
+                opacity: 1
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 300px;
+                height: 100%;
+                padding: 32px 0 48px 0;
+                font-size: 14px;
+                box-shadow: 0 0 4px rgba(150, 150, 150, .33);
+                box-sizing: border-box;
+                overflow: auto;
+                background-color: inherit
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar {
+                width: 8px
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track {
+                border-radius: 10px;
+                background-color: transparent
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background-color: rgba(150, 150, 150, .66);
+                border: 4px solid rgba(150, 150, 150, .66);
+                background-clip: content-box
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a {
+                text-decoration: none
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc {
+                padding: 0 16px
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link {
+                display: inline;
+                padding: .25rem 0
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p {
+                display: inline
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link {
+                font-weight: 800
+            }
+
+            html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                left: 300px;
+                width: calc(100% - 300px);
+                padding: 2em calc(50% - 457px - 300px / 2);
+                margin: 0;
+                box-sizing: border-box
+            }
+
+            @media screen and (max-width:1274px) {
+                html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                    padding: 2em
+                }
+            }
+
+            @media screen and (max-width:450px) {
+                html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview {
+                    width: 100%
+                }
+            }
+
+            html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview {
+                left: 50%;
+                transform: translateX(-50%)
+            }
+
+            html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc {
+                display: none
+            }
+
+            /* Please visit the URL below for more information: */
+            /*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
 
         </style>
 
-        <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
-                          document.addEventListener("DOMContentLoaded", function () {
-                            // your code here
-                          });
-                        </script>
+        <!-- The content below will be included at the end of the <head> element. -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", function () {
+                // your code here
+            });
+        </script>
 
     </head>
 
 
-    <body for="html-export" style="margin: 0%;" >
-
-        <!-- +++======== --><!-- +++ HTML ______________ -->
+    <body for="html-export" style="margin: 0%;">
 
         <div class="abks-grid-container">
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Header.html");</script>
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Navbar.html");</script>
 
-            <!-- +++======== --><!-- +++ HEADER GRID HTML -->
-            <div class="abks-grid-item-header">
-                <h1 class="h-yayn h1-yayn">ABAKUS</h1>
-                <h2 class="h-yayn h2-yayn" style="color: white;">Bilgisayar, Felsefe, Vb.</h2>
-                <div id="abks-divInHeader">
-                    <p>Tarih, Hakkında, İletişim, Abonelik, Paylaşım, MüzVid</p>
-                </div>
-            </div>
+            <div class="abks-grid-main-mkl prgrf-yayn text-yayn">
 
 
-            <!-- +++======== --><!-- +++ NAVBAR GRID HTML -->
-            <div class="abks-grid-item-navbar">
-                <a href="#" title="ANA SAYFA">ANA SAYFA</a>
-                <a href="#" title="ETİK">ETİK</a>
-                <a href="#" title="HAKKIMDA">HAKKIMDA</a>
-                <a class="abks-grid-item-navbar-menu-right" href="#" title="Sağ Menu">SağMenu</a>
-            </div>
 
 
-            <!-- +++======== --><!-- +++ MAIN (YAYIN GÖVDESİ) GRID HTML -->
-            <div class="abks-grid-item-main">
 
-                <div class="abks-grid-yaynSayfasi-subgrid">
-                    <div class="prgrf-yayn text-yayn">
-                        
-                     
-                            
-                              <div class="crossnote markdown-preview  ">
-                              
-                        <h1 id="characters-to-escape---from-html-parts-in-jason-javascript-etc" style="color:#573100">CHARACTERS TO ESCAPE - FROM HTML PARTS IN JASON, JAVASCRIPT ETC. </h1>
-                        
-                        <p><strong>ESCAPE General</strong><br>
-                        In coding, "escape" refers to a way to include special characters in a string that would otherwise be difficult or impossible to include. These special characters may include things like quotation marks, backslashes, or newline characters.<br>
-                        When you want to include a special character in a string, you can use an escape sequence, which typically starts with a backslash (\) followed by a specific character. For example, if you want to include a double quote within a string that is also enclosed in double quotes, you would need to "escape" the inner double quote to differentiate it from the outer quotes.<br>
-                        Escaping ensures that special characters are interpreted literally as part of the string value rather than their JSON,JS or etc specific functions.<br>
-                        By using escape sequences, you can include special characters in your strings without causing syntax errors, parsing errors or unintended behavior in your code.</p>
-                        <p><strong>Here's a list of characters that typically need escaping in JSON,JS etc strings when including HTML content:</strong></p>
-                        <p><strong><em>NOTE: Escape characters in this part are a gathering collection. Some is used in some languages, some not. Check the related parts down in this page to get the proper results.</em></strong></p>
-                        <ul>
-                        <li><strong>Backslash (<code>\</code>)</strong>: Escape it as <code>\\</code> to represent a literal backslash. Print a real backslash If you need a real backslash then you need to escape the back slash. The computer will only print one backslash.</li>
-                        <li><strong>Double quote (<code>"</code>)</strong>: Escape it as <code>\"</code> to include double quotes within a JSON etc string. In some cases a double quote has a special meaning, and should be escaped if you really want a double quote.</li>
-                        <li><strong>Single quote (<code>'</code>)</strong>: While less common in HTML, escape it as <code>\'</code> if used.</li>
-                        <li><strong>Newline (<code>\n</code>)</strong>: Escape it as <code>\n</code> to represent a line break. Adds a newline at that place in the text (similar to pressing Enter). It might be show n with the ¶ in your translation program.</li>
-                        <li><strong>Tab (<code>\t</code>)</strong>: Escape it as <code>\t</code> to represent a horizontal tab. Add a tab marker at that spot in the text. This is sometimes used to align text in columns.</li>
-                        <li><strong>Carriage return (<code>\r</code>)</strong>: Escape it as <code>\r</code> to represent a carriage return. Return without advancing the line This is usually used with n in software for Windows.</li>
-                        <li><strong>Backspace (<code>\b</code>)</strong>: Escape it as <code>\b</code> to represent a backspace.</li>
-                        <li><strong>Form feed (<code>\f</code>)</strong>: Escape it as <code>\f</code> to represent a form feed.</li>
-                        <li><strong>Forward slash (<code>/</code>)</strong>: While not strictly required, escaping it as <code>\/</code> can sometimes be helpful to avoid confusion with JSON etc path separators.</li>
-                        <li><strong>Vertical Tab (<code>\v</code>)</strong>: Seldom used in modern JavaScript, inserts a vertical tab character.</li>
-                        <li><strong>Octal (<code>\ followed by three octal digits</code>) and Hexadecimal (<code>\x followed by two hexadecimal digits</code>) Escapes:</strong>: <strong>Advanced Escapes:</strong> These allow representing characters using their octal or hexadecimal codes, useful for uncommon characters. Not commonly used in everyday JavaScript.</li>
-                        <li><strong>\uxxxx</strong>: Unicode character. Sometime you want to refer to Unicode characters using normal ASCII. Many programs and programmers use u to refer to the Unicode character. Where xxxx is the hexadecimal or decimal value for the specific Unicode character.</li>
-                        <li><strong>&amp;apos;</strong> : apostrophe (‘) In some XML documents, you might need to represent the apostrophe and some other characters with XML entities. For example ‘&lt;a href=”index.html” title=”Rock &amp;apos;n Roll”&gt;link&lt;/a&gt;’</li>
-                        <li><strong>Less Than (<code>&lt;</code>)</strong>: &lt;": This represents the less than sign (&lt;).</li>
-                        <li><strong>Greater Than (<code>&gt;</code>)</strong>: "&gt;": This represents the greater than sign (&gt;).</li>
+
+                <!-- ++. ++++++++++++++++++ -->
+                <div class="crossnote markdown-preview">
+
+                    <h1 id="characters-to-escape---from-html-parts-in-jason-javascript-etc" style="color:#573100">
+                        <span id="section0">CHARACTERS TO ESCAPE - FROM HTML PARTS IN JASON, JAVASCRIPT ETC.</span>
+                    </h1>
+                    <br />
+                    <br />
+
+                    <div class="link-rengim" style="text-align: center;">
+                        <h2 class="h-yayn h2-yayn">CONTENT</h2>
+                        <ul style="text-align: left; list-style-position: inside;">
+                            <!-- <li><a href="#section0" title="CHARACTERS TO ESCAPE - FROM HTML PARTS IN JASON, JAVASCRIPT ETC.">CHARACTERS TO ESCAPE - FROM HTML PARTS IN JASON, JAVASCRIPT ETC. </a></li> -->
+                            <li><a href="#section1" title="JASON - ESCAPE CHARACTERS EXAMPLES">JASON - ESCAPE CHARACTERS
+                                    EXAMPLES</a></li>
+                            <li><a href="#section2" title="JAVASCRIPT - ESCAPE CHARACTERS EXAMPLES">JAVASCRIPT - ESCAPE
+                                    CHARACTERS EXAMPLES</a></li>
+                            <li><a href="#section3" title="XML,XHTML - ESCAPE CHARACTERS EXAMPLES">XML,XHTML - ESCAPE
+                                    CHARACTERS EXAMPLES</a></li>
+                            <li><a href="#section4" title="MARKDOWN - ESCAPE CHARACTERS">MARKDOWN - ESCAPE
+                                    CHARACTERS</a>
+                            </li>
+                            <li><a href="#section5" title="SOME OTHER LANGUAGES - ESCAPE CHARACTERS">SOME OTHER
+                                    LANGUAGES -
+                                    ESCAPE CHARACTERS</a></li>
+                        </ul>
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <p><strong>ESCAPE General</strong><br>
+                        In coding, "escape" refers to a way to include special characters in a string that would
+                        otherwise be difficult or impossible to include. These special characters may include things
+                        like quotation marks, backslashes, or newline characters.<br>
+                        When you want to include a special character in a string, you can use an escape sequence,
+                        which typically starts with a backslash (\) followed by a specific character. For example,
+                        if you want to include a double quote within a string that is also enclosed in double
+                        quotes, you would need to "escape" the inner double quote to differentiate it from the outer
+                        quotes.<br>
+                        Escaping ensures that special characters are interpreted literally as part of the string
+                        value rather than their JSON,JS or etc specific functions.<br>
+                        By using escape sequences, you can include special characters in your strings without
+                        causing syntax errors, parsing errors or unintended behavior in your code.</p>
+                    <p><strong>Here's a list of characters that typically need escaping in JSON,JS etc strings when
+                            including HTML content:</strong></p>
+                    <p><strong><em>NOTE: Escape characters in this part are a gathering collection. Some is used in
+                                some languages, some not. Check the related parts down in this page to get the
+                                proper results.</em></strong></p>
+                    <ul>
+                        <li><strong>Backslash (<code>\</code>)</strong>: Escape it as <code>\\</code> to represent a
+                            literal backslash. Print a real backslash If you need a real backslash then you need to
+                            escape the back slash. The computer will only print one backslash.</li>
+                        <li><strong>Double quote (<code>"</code>)</strong>: Escape it as <code>\"</code> to include
+                            double quotes within a JSON etc string. In some cases a double quote has a special
+                            meaning, and should be escaped if you really want a double quote.</li>
+                        <li><strong>Single quote (<code>'</code>)</strong>: While less common in HTML, escape it as
+                            <code>\'</code> if used.
+                        </li>
+                        <li><strong>Newline (<code>\n</code>)</strong>: Escape it as <code>\n</code> to represent a
+                            line break. Adds a newline at that place in the text (similar to pressing Enter). It
+                            might be show n with the ¶ in your translation program.</li>
+                        <li><strong>Tab (<code>\t</code>)</strong>: Escape it as <code>\t</code> to represent a
+                            horizontal tab. Add a tab marker at that spot in the text. This is sometimes used to
+                            align text in columns.</li>
+                        <li><strong>Carriage return (<code>\r</code>)</strong>: Escape it as <code>\r</code> to
+                            represent a carriage return. Return without advancing the line This is usually used with
+                            n in software for Windows.</li>
+                        <li><strong>Backspace (<code>\b</code>)</strong>: Escape it as <code>\b</code> to represent
+                            a backspace.</li>
+                        <li><strong>Form feed (<code>\f</code>)</strong>: Escape it as <code>\f</code> to represent
+                            a form feed.</li>
+                        <li><strong>Forward slash (<code>/</code>)</strong>: While not strictly required, escaping
+                            it as <code>\/</code> can sometimes be helpful to avoid confusion with JSON etc path
+                            separators.</li>
+                        <li><strong>Vertical Tab (<code>\v</code>)</strong>: Seldom used in modern JavaScript,
+                            inserts a vertical tab character.</li>
+                        <li><strong>Octal (<code>\ followed by three octal digits</code>) and Hexadecimal (<code>\x
+                                    followed by two hexadecimal digits</code>) Escapes:</strong>: <strong>Advanced
+                                Escapes:</strong> These allow representing characters using their octal or
+                            hexadecimal codes, useful for uncommon characters. Not commonly used in everyday
+                            JavaScript.</li>
+                        <li><strong>\uxxxx</strong>: Unicode character. Sometime you want to refer to Unicode
+                            characters using normal ASCII. Many programs and programmers use u to refer to the
+                            Unicode character. Where xxxx is the hexadecimal or decimal value for the specific
+                            Unicode character.</li>
+                        <li><strong>&amp;apos;</strong> : apostrophe (‘) In some XML documents, you might need to
+                            represent the apostrophe and some other characters with XML entities. For example ‘&lt;a
+                            href=”index.html” title=”Rock &amp;apos;n Roll”&gt;link&lt;/a&gt;’</li>
+                        <li><strong>Less Than (<code>&lt;</code>)</strong>: &lt;": This represents the less than
+                            sign (&lt;).</li>
+                        <li><strong>Greater Than (<code>&gt;</code>)</strong>: "&gt;": This represents the greater
+                            than sign (&gt;).</li>
                         <li><strong>Ampersand (<code>&amp;</code>)</strong>:</li>
-                        </ul>
-                        <h2 id="jason---escape-characters-examples" style="color:#0086b3">JASON - ESCAPE CHARACTERS EXAMPLES </h2>
-                        <p><strong>1. Backslash (<code>\</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"This string includes a backslash \\ for a specific purpose."</span>
-                        </code></pre><p><strong>2. Double Quote (<code>"</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"He said, \"This is a quote within a quote\"."</span>
-                        </code></pre><p><strong>3. Single Quote (<code>'</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code>'This isn't the most common use case<span class="token punctuation">,</span> but you can escape a single quote if needed<span class="token operator">:</span> \'example\'.' (Less common in HTML)
-                        </code></pre><p><strong>4. Newline (<code>\n</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"This JSON string includes a newline \n for readability."</span>
-                        </code></pre><p><strong>5. Tab (<code>\t</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"This JSON string has a \ttab character for formatting."</span>
-                        </code></pre><p><strong>6. Carriage Return (<code>\r</code>)</strong><br>
+                    </ul>
+
+                    <!-- +++======== --><!-- +++ 1 JASON - ESCAPE
+                            CHARACTERS
+                            EXAMPLES -->
+
+                    <h2 id="jason---escape-characters-examples" style="color:#0086b3"><span id="section1">JASON - ESCAPE
+                            CHARACTERS
+                            EXAMPLES </span></h2>
+                    <p><strong>1. Backslash (<code>\</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"This string includes a backslash \\ for a
+                                specific purpose."</span>
+                        </code></pre>
+                    <p><strong>2. Double Quote (<code>"</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"He said, \"This is a quote within a
+                                quote\"."</span>
+                        </code></pre>
+                    <p><strong>3. Single Quote (<code>'</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code>'This isn't the
+                            most common use case<span class="token punctuation">,</span> but you can escape a single
+                            quote if needed<span class="token operator">:</span> \'example\'.' (Less common in HTML)
+                        </code></pre>
+                    <p><strong>4. Newline (<code>\n</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"This JSON string includes a newline \n for
+                                readability."</span>
+                        </code></pre>
+                    <p><strong>5. Tab (<code>\t</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"This JSON string has a \ttab character for
+                                formatting."</span>
+                        </code></pre>
+                    <p><strong>6. Carriage Return (<code>\r</code>)</strong><br>
                         This is less common in modern HTML, but for completeness:</p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"This JSON string has a \rcarriage return for compatibility with older systems."</span>
-                        </code></pre><p><strong>7. Backspace (<code>\b</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"This JSON string uses a \bbackspace to correct a typo (may not be visually apparent)."</span>
-                        </code></pre><p><strong>8. Form Feed (<code>\f</code>)</strong><br>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"This JSON string has a \rcarriage return for
+                                compatibility with older systems."</span>
+                        </code></pre>
+                    <p><strong>7. Backspace (<code>\b</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"This JSON string uses a \bbackspace to correct
+                                a typo (may not be visually apparent)."</span>
+                        </code></pre>
+                    <p><strong>8. Form Feed (<code>\f</code>)</strong><br>
                         This is rarely used in modern HTML, but for completeness:</p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"This JSON string has a \fform feed for compatibility with legacy systems."</span>
-                        </code></pre><p><strong>9. Forward Slash (<code>/</code>)</strong></p>
-                        <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token string">"The path to my file is /user/documents\/important_file.txt"</span> (Escaping here improves readability<span class="token punctuation">,</span> but not strictly necessary)
-                        </code></pre><h2 id="javascript---escape-characters-examples" style="color:#0086b3">JAVASCRIPT - ESCAPE CHARACTERS EXAMPLES </h2>
-                        <p>While escaping characters in JavaScript serves a similar purpose as in JSON, there are some contextual differences. Here are examples of escape character usage in JavaScript:</p>
-                        <p><strong>1. Backslash (<code>\</code>)</strong></p>
-                        <ul>
-                        <li><strong>Line Continuation:</strong> Used to break a long string literal across multiple lines for better readability:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> longString <span class="token operator">=</span> <span class="token string">"This is a very long string that \
-                        continues on the next line."</span><span class="token punctuation">;</span>
-                        </code></pre><p><strong>2. Single Quote (<code>'</code>)</strong></p>
-                        <ul>
-                        <li><strong>String Delimiter:</strong> If you need to use double quotes within a string, you can use single quotes as the delimiters:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> message <span class="token operator">=</span> <span class="token string">'He said, "Isn\'t this cool?"'</span><span class="token punctuation">;</span>
-                        </code></pre><p><strong>3. Double Quote (<code>"</code>)</strong></p>
-                        <ul>
-                        <li><strong>String Delimiter:</strong> Conversely, if you need to use single quotes within a string, use double quotes as delimiters:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> filename <span class="token operator">=</span> <span class="token string">"user's_data.txt"</span><span class="token punctuation">;</span>
-                        </code></pre><p><strong>4. Newline (<code>\n</code>)</strong></p>
-                        <ul>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"This JSON string has a \fform feed for
+                                compatibility with legacy systems."</span>
+                        </code></pre>
+                    <p><strong>9. Forward Slash (<code>/</code>)</strong></p>
+                    <pre data-role="codeBlock" data-info="json" class="language-json json"><code><span
+                                                class="token string">"The path to my file is
+                                /user/documents\/important_file.txt"</span> (Escaping here improves readability<span
+                                                class="token punctuation">,</span> but not strictly necessary)
+                        </code></pre>
+
+
+                    <!-- +++======== --><!-- +++ JAVASCRIPT - 2 ESCAPE
+                            CHARACTERS EXAMPLES -->
+                    <h2 id="javascript---escape-characters-examples" style="color:#0086b3"><span
+                                            id="section2">JAVASCRIPT - ESCAPE
+                            CHARACTERS EXAMPLES </span></h2>
+                    <p>While escaping characters in JavaScript serves a similar purpose as in JSON, there are some
+                        contextual differences. Here are examples of escape character usage in JavaScript:</p>
+                    <p><strong>1. Backslash (<code>\</code>)</strong></p>
+                    <ul>
+                        <li><strong>Line Continuation:</strong> Used to break a long string literal across multiple
+                            lines for better readability:</li>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> longString <span
+                                                class="token operator">=</span> <span class="token string">"This is
+                                a very long string that \
+                                continues on the next line."</span><span class="token punctuation">;</span>
+                        </code>
+                    </pre>
+                    <p><strong>2. Single Quote (<code>'</code>)</strong></p>
+                    <ul>
+                        <li><strong>String Delimiter:</strong> If you need to use double quotes within a string, you
+                            can use single quotes as the delimiters:</li>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> message <span
+                                                class="token operator">=</span> <span class="token string">'He said,
+                                "Isn\'t this cool?"'</span><span class="token punctuation">;</span>
+                        </code>
+                    </pre>
+                    <p><strong>3. Double Quote (<code>"</code>)</strong></p>
+                    <ul>
+                        <li><strong>String Delimiter:</strong> Conversely, if you need to use single quotes within a
+                            string, use double quotes as delimiters:</li>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> filename <span
+                                                class="token operator">=</span> <span
+                                                class="token string">"user's_data.txt"</span><span
+                                                class="token punctuation">;</span>
+                        </code>
+                    </pre>
+                    <p><strong>4. Newline (<code>\n</code>)</strong></p>
+                    <ul>
                         <li><strong>Newline Character:</strong> Inserts a newline character within a string:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> message <span class="token operator">=</span> <span class="token string">"Line 1\nLine 2"</span><span class="token punctuation">;</span>
-                        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Outputs: Line 1</span>
-                                                <span class="token comment">//          Line 2</span>
-                        </code></pre><p><strong>5. Tab (<code>\t</code>)</strong></p>
-                        <ul>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> message <span
+                                                class="token operator">=</span> <span class="token string">"Line
+                                1\nLine 2"</span><span class="token punctuation">;</span>
+                            <span class="token console class-name">console</span><span
+                                                class="token punctuation">.</span><span
+                                                class="token method function property-access">log</span><span
+                                                class="token punctuation">(</span>message<span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span> <span class="token comment">//
+                                Outputs: Line 1</span>
+                            <span class="token comment">// Line 2</span>
+                        </code>
+                    </pre>
+                    <p><strong>5. Tab (<code>\t</code>)</strong></p>
+                    <ul>
                         <li><strong>Tab Character:</strong> Inserts a horizontal tab within a string:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> code <span class="token operator">=</span> <span class="token string">"function\tdoSomething() {\n\t// Code here\n}"</span><span class="token punctuation">;</span>
-                        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>code<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// Displays the code with proper indentation (may vary depending on console)</span>
-                        </code></pre><p><strong>6. Carriage Return (<code>\r</code>)</strong></p>
-                        <ul>
-                        <li><strong>Carriage Return:</strong> Less common in modern JavaScript, but inserts a carriage return character for compatibility with older systems:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> message <span class="token operator">=</span> <span class="token string">"Line 1\rLine 2"</span><span class="token punctuation">;</span>  <span class="token comment">// Not recommended for modern use</span>
-                        </code></pre><p><strong>7. Backspace (<code>\b</code>)</strong></p>
-                        <ul>
-                        <li><strong>Backspace Character:</strong> Inserts a backspace character within a string, though this may not be visually apparent in all environments:</li>
-                        </ul>
-                        <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-let">let</span> text <span class="token operator">=</span> <span class="token string">"This is a test\b!"</span><span class="token punctuation">;</span>
-                        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// Output might vary depending on console, may not show a visible change</span>
-                        </code></pre><p><strong>8. Form Feed (<code>\f</code>)</strong></p>
-                        <ul>
-                        <li><strong>Form Feed Character:</strong> Rarely used in JavaScript, inserts a form feed character for compatibility with legacy systems.</li>
-                        </ul>
-                        <p><strong>9. Vertical Tab (<code>\v</code>)</strong></p>
-                        <ul>
-                        <li><strong>Vertical Tab Character:</strong> Seldom used in modern JavaScript, inserts a vertical tab character.</li>
-                        </ul>
-                        <p><strong>10. Octal (<code>\ followed by three octal digits</code>) and Hexadecimal (<code>\x followed by two hexadecimal digits</code>) Escapes:</strong></p>
-                        <ul>
-                        <li><strong>Advanced Escapes:</strong> These allow representing characters using their octal or hexadecimal codes, useful for uncommon characters. Not commonly used in everyday JavaScript.</li>
-                        </ul>
-                        <p><strong>Remember:</strong></p>
-                        <ul>
-                        <li>Escaping characters is essential for representing special characters literally within strings in JavaScript.</li>
-                        <li>The specific use cases might differ slightly from JSON due to JavaScript's more diverse string manipulation functionalities.</li>
-                        </ul>
-                        <h2 id="xmlxhtml---escape-characters-examples" style="color:#0086b3">XML,XHTML - ESCAPE CHARACTERS EXAMPLES </h2>
-                        <p>Escape characters are <strong>not always necessary</strong> in XML or XHTML, but they can be used in certain situations to ensure proper parsing and interpretation of the data. Here's a breakdown of when they might be helpful:</p>
-                        <p><strong>Scenarios Where Escape Characters Are Useful:</strong></p>
-                        <ol>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> code <span
+                                                class="token operator">=</span> <span
+                                                class="token string">"function\tdoSomething() {\n\t// Code
+                                here\n}"</span><span class="token punctuation">;</span>
+                            <span class="token console class-name">console</span><span
+                                                class="token punctuation">.</span><span
+                                                class="token method function property-access">log</span><span
+                                                class="token punctuation">(</span>code<span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span> <span class="token comment">//
+                                Displays the code with proper indentation (may vary depending on console)</span>
+                        </code>
+                    </pre>
+                    <p><strong>6. Carriage Return (<code>\r</code>)</strong></p>
+                    <ul>
+                        <li><strong>Carriage Return:</strong> Less common in modern JavaScript, but inserts a
+                            carriage return character for compatibility with older systems:</li>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> message <span
+                                                class="token operator">=</span> <span class="token string">"Line
+                                1\rLine 2"</span><span class="token punctuation">;</span> <span class="token comment">//
+                                Not recommended for modern use</span>
+                        </code>
+                    </pre>
+                    <p><strong>7. Backspace (<code>\b</code>)</strong></p>
+                    <ul>
+                        <li><strong>Backspace Character:</strong> Inserts a backspace character within a string,
+                            though this may not be visually apparent in all environments:</li>
+                    </ul>
+                    <pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript">
+                        <code><span class="token keyword keyword-let">let</span> text <span
+                                                class="token operator">=</span> <span class="token string">"This is
+                                a test\b!"</span><span class="token punctuation">;</span>
+                            <span class="token console class-name">console</span><span
+                                                class="token punctuation">.</span><span
+                                                class="token method function property-access">log</span><span
+                                                class="token punctuation">(</span>text<span
+                                                class="token punctuation">)</span><span
+                                                class="token punctuation">;</span> <span class="token comment">//
+                                Output might vary depending on console, may not show a visible change</span>
+                        </code>
+                    </pre>
+                    <p><strong>8. Form Feed (<code>\f</code>)</strong></p>
+                    <ul>
+                        <li><strong>Form Feed Character:</strong> Rarely used in JavaScript, inserts a form feed
+                            character for compatibility with legacy systems.</li>
+                    </ul>
+                    <p><strong>9. Vertical Tab (<code>\v</code>)</strong></p>
+                    <ul>
+                        <li><strong>Vertical Tab Character:</strong> Seldom used in modern JavaScript, inserts a
+                            vertical tab character.</li>
+                    </ul>
+                    <p><strong>10. Octal (<code>\ followed by three octal digits</code>) and Hexadecimal (<code>\x
+                                followed by two hexadecimal digits</code>) Escapes:</strong></p>
+                    <ul>
+                        <li><strong>Advanced Escapes:</strong> These allow representing characters using their octal
+                            or hexadecimal codes, useful for uncommon characters. Not commonly used in everyday
+                            JavaScript.</li>
+                    </ul>
+                    <p><strong>Remember:</strong></p>
+                    <ul>
+                        <li>Escaping characters is essential for representing special characters literally within
+                            strings in JavaScript.</li>
+                        <li>The specific use cases might differ slightly from JSON due to JavaScript's more diverse
+                            string manipulation functionalities.</li>
+                    </ul>
+
+                    <!-- +++======== --><!-- +++ 3 XML,XHTML -
+                            ESCAPE
+                            CHARACTERS EXAMPLES -->
+                    <h2 id="xmlxhtml---escape-characters-examples" style="color:#0086b3"><span id="section3">XML,XHTML -
+                            ESCAPE
+                            CHARACTERS EXAMPLES </span></h2>
+                    <p>Escape characters are <strong>not always necessary</strong> in XML or XHTML, but they can be
+                        used in certain situations to ensure proper parsing and interpretation of the data. Here's a
+                        breakdown of when they might be helpful:</p>
+                    <p><strong>Scenarios Where Escape Characters Are Useful:</strong></p>
+                    <ol>
                         <li>
-                        <p><strong>Special Characters Within Attribute Values:</strong></p>
-                        <ul>
-                        <li>If you need to include special characters like <code>&lt;</code>, <code>&gt;</code>, <code>&amp;</code>, <code>'</code>, or <code>"</code> within an attribute value, you should escape them using character references. This prevents the parser from mistaking them for XML markup.</li>
-                        <li>Example: <code>&lt;span title="He said, &amp;quot;Hello!&amp;quot;"&gt;</code> (represents a span element with a title containing a double quote)</li>
-                        </ul>
+                            <p><strong>Special Characters Within Attribute Values:</strong></p>
+                            <ul>
+                                <li>If you need to include special characters like <code>&lt;</code>,
+                                    <code>&gt;</code>, <code>&amp;</code>, <code>'</code>, or <code>"</code> within
+                                    an attribute value, you should escape them using character references. This
+                                    prevents the parser from mistaking them for XML markup.
+                                </li>
+                                <li>Example: <code>&lt;span title="He said, &amp;quot;Hello!&amp;quot;"&gt;</code>
+                                    (represents a span element with a title containing a double quote)</li>
+                            </ul>
                         </li>
                         <li>
-                        <p><strong>CDATA Sections:</strong></p>
-                        <ul>
-                        <li>For including large chunks of text that might contain characters that would otherwise be interpreted as XML markup, you can use CDATA (Character Data) sections. Within a CDATA section, escape characters are not necessary.</li>
-                        <li>Example:<pre data-role="codeBlock" data-info="xml" class="language-xml xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>description</span><span class="token punctuation">&gt;</span></span><span class="token cdata">&lt;![CDATA[This text contains &lt;tags&gt; and &amp; special characters, but they won't be parsed as XML.]]&gt;</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>description</span><span class="token punctuation">&gt;</span></span>
-                        </code></pre></li>
-                        </ul>
+                            <p><strong>CDATA Sections:</strong></p>
+                            <ul>
+                                <li>For including large chunks of text that might contain characters that would
+                                    otherwise be interpreted as XML markup, you can use CDATA (Character Data)
+                                    sections. Within a CDATA section, escape characters are not necessary.</li>
+                                <li>Example:<pre data-role="codeBlock" data-info="xml" class="language-xml xml">
+                                        <code><span class="token tag"><span class="token tag"><span
+                                                                        class="token punctuation">&lt;</span>description</span><span
+                                                                    class="token punctuation">&gt;</span></span><span
+                                                                class="token cdata">&lt;![CDATA[This text contains
+                                                &lt;tags&gt; and &amp; special characters, but they won't be parsed
+                                                as XML.]]&gt;</span><span class="token tag"><span
+                                                                    class="token tag"><span
+                                                                        class="token punctuation">&lt;/</span>description</span><span
+                                                                    class="token punctuation">&gt;</span></span>
+                                        </code>
+                                    </pre>
+                                </li>
+                            </ul>
                         </li>
-                        </ol>
-                        <p><strong>Scenarios Where Escape Characters Are Not Needed:</strong></p>
-                        <ul>
-                        <li>Text content within elements: Characters within the opening and closing tags of an element are generally treated as plain text and don't require escaping (unless used in attribute values as mentioned above).</li>
-                        </ul>
-                        <p><strong>Key Points:</strong></p>
-                        <ul>
-                        <li>Escaping in XML/XHTML is primarily concerned with preventing conflicts with the language's own syntax.</li>
+                    </ol>
+                    <p><strong>Scenarios Where Escape Characters Are Not Needed:</strong></p>
+                    <ul>
+                        <li>Text content within elements: Characters within the opening and closing tags of an
+                            element are generally treated as plain text and don't require escaping (unless used in
+                            attribute values as mentioned above).</li>
+                    </ul>
+                    <p><strong>Key Points:</strong></p>
+                    <ul>
+                        <li>Escaping in XML/XHTML is primarily concerned with preventing conflicts with the
+                            language's own syntax.</li>
                         <li>Use escaping judiciously, as overuse can make the code harder to read.</li>
-                        <li>Refer to XML/XHTML specifications for a complete list of characters that might need escaping in specific contexts.</li>
-                        </ul>
-                        <p><strong>In summary:</strong> While escape characters aren't mandatory for all content in XML/XHTML, they become important when dealing with special characters within attribute values or including large sections of raw text.</p>
-                        <h3 id="here-are-some-examples-of-special-characters-within-attribute-values-in-xml-along-with-their-outputs">Here are some examples of special characters within attribute values in XML, along with their outputs: </h3>
-                        <p><strong>1. Less Than (<code>&lt;</code>)</strong></p>
-                        <ul>
-                        <li><strong>Example:</strong> <code>&lt;img src="&lt;invalid image URL&gt;" alt="Image with special characters"&gt;</code></li>
-                        <li><strong>Output:</strong> This will likely result in the image not being displayed correctly because the parser interprets the <code>&lt;</code> within the <code>src</code> attribute as the start of a new XML element.</li>
-                        <li><strong>Corrected Example:</strong> <code>&lt;img src="&amp;lt;invalid image URL&amp;gt;" alt="Image with special characters"&gt;</code></li>
-                        <li><strong>Output:</strong> Now, the <code>&lt;</code> symbol is displayed literally as "&lt;" because it's escaped using a character reference.</li>
-                        </ul>
-                        <p><strong>2. Greater Than (<code>&gt;</code>)</strong></p>
-                        <ul>
-                        <li><strong>Example:</strong> <code>&lt;button onclick="alert('This message has &gt; in it')"&gt;Click Me&lt;/button&gt;</code></li>
-                        <li><strong>Output:</strong> This might cause a parsing error depending on the XML processor. The <code>&gt;</code> within the <code>onclick</code> attribute might be interpreted as the end of the opening <code>&lt;button&gt;</code> tag.</li>
-                        <li><strong>Corrected Example:</strong> <code>&lt;button onclick="alert('This message has &amp;gt; in it')"&gt;Click Me&lt;/button&gt;</code></li>
-                        <li><strong>Output:</strong> Here, the <code>&gt;</code> symbol is displayed literally as "&gt;" using the character reference.</li>
-                        </ul>
-                        <p><strong>3. Ampersand (<code>&amp;</code>)</strong></p>
-                        <ul>
-                        <li><strong>Example:</strong> <code>&lt;a href="http://www.example.com&amp;param1=value1"&gt;Link Text&lt;/a&gt;</code></li>
-                        <li><strong>Output:</strong> This might cause unexpected behavior. The parser might interpret the <code>&amp;</code> as the start of a character reference, leading to errors.</li>
-                        <li><strong>Corrected Example:</strong> <code>&lt;a href="http://www.example.com?param1=value1"&gt;Link Text&lt;/a&gt;</code></li>
-                        <li><strong>Output:</strong> In this case, the <code>&amp;</code> is used for its intended purpose within a URL query string (separating parameters).</li>
-                        </ul>
-                        <p><strong>4. Apostrophe (<code>'</code>)</strong></p>
-                        <ul>
-                        <li><strong>Example:</strong> <code>&lt;input type="text" value="He said, 'Isn't this cool?'"&gt;</code></li>
-                        <li><strong>Output:</strong> This could lead to errors if double quotes are used as the element's opening and closing quotes.</li>
-                        <li><strong>Corrected Example (using double quotes):</strong> <code>&lt;input type="text" value="He said, &amp;quot;Isn't this cool?&amp;quot;"&gt;</code></li>
-                        <li><strong>Corrected Example (using single quotes as element quotes):</strong> <code>&lt;input type='text' value='He said, "Isn\'t this cool?"'&gt;</code>  (Escape the double quote within the value)</li>
-                        </ul>
-                        <p><strong>5. Double Quote (<code>"</code>)</strong></p>
-                        <ul>
-                        <li><strong>Example:</strong> <code>&lt;p title="This title has a "double quote" inside."&gt;</code></li>
-                        <li><strong>Output:</strong> This will likely cause a parsing error because double quotes are used as the element's opening and closing quotes.</li>
-                        <li><strong>Corrected Example (using single quotes):</strong> <code>&lt;p title='This title has a "double quote" inside.'&gt;</code> (Escape the double quote within the value)</li>
-                        <li><strong>Corrected Example (using double quotes as attribute value):</strong> <code>&lt;p title="This title has a &amp;quot;double quote&amp;quot; inside."&gt;</code>  (Escape the double quote using a character reference)</li>
-                        </ul>
-                        <p><strong>Remember:</strong> The specific characters that need escaping can vary depending on the context and the XML parser being used. It's always a good practice to escape these characters when in doubt to ensure proper parsing and avoid potential errors.</p>
-                        <h2 id="markdown---escape-characters" style="color:#0086b3">MARKDOWN - ESCAPE CHARACTERS </h2>
-                        <p>Markdown uses backslashes (<code>\</code>) to escape a small set of characters that would otherwise have special formatting meanings within the language. Here's a breakdown of some common escape characters in Markdown:</p>
-                        <p><strong>1. Asterisk (<code>\*</code>)</strong></p>
-                        <ul>
-                        <li><strong>Purpose:</strong> Normally, asterisks are used for creating bulleted lists. By escaping it, you can display an asterisk literally.</li>
-                        <li><strong>Example:</strong> <code>This sentence includes an asterisk \* for emphasis.</code> (Output: This sentence includes an asterisk * for emphasis.)</li>
-                        </ul>
-                        <p><strong>2. Underscore (<code>\_</code>)</strong></p>
-                        <ul>
-                        <li><strong>Purpose:</strong> Underscores are typically used for italics. Escaping allows you to display them as underscores.</li>
-                        <li><strong>Example:</strong> <code>We have a_special_case here that shouldn't be italicized.</code> (Output: We have a_special_case here that shouldn't be italicized.)</li>
-                        </ul>
-                        <p><strong>3. Backtick (<code>\</code>)</strong></p>
-                        <ul>
-                        <li><strong>Purpose:</strong> Backticks are used for inline code snippets. Escaping allows you to display a backtick character.</li>
-                        <li><strong>Example:</strong> <code>The command is written as \</code>ls`.<code>(Output: The command is written as</code>ls`.)</li>
-                        </ul>
-                        <p><strong>4. Hash (<code>\#</code>)</strong></p>
-                        <ul>
-                        <li><strong>Purpose:</strong> Hashes are used for creating headings. Escaping allows you to display a hash symbol.</li>
-                        <li><strong>Example:</strong> <code>Use \# marks sparingly for better readability.</code> (Output: Use # marks sparingly for better readability.)</li>
-                        </ul>
-                        <p><strong>5. Other Characters</strong></p>
-                        <ul>
-                        <li>Markdown also allows escaping some punctuation marks like parentheses (<code>\(</code> and <code>\)</code>), square brackets (<code>\[</code> and <code>\]</code>), curly braces (<code>\{</code> and <code>\}</code>), plus sign (<code>\+</code>), minus sign (<code>\-</code>), and pipe (<code>\|</code>) to display them literally.</li>
-                        </ul>
-                        <p><strong>Important Notes:</strong></p>
-                        <ul>
-                        <li>Escaping is generally not needed for most alphanumeric characters or symbols.</li>
-                        <li>Overuse of escaping can make your Markdown less readable. Use it only when necessary.</li>
-                        <li>Some Markdown renderers might support additional escape sequences, so refer to the specific flavor you're using for a comprehensive list.</li>
-                        </ul>
-                        <p>By understanding these escape characters, you can gain more control over how your text appears in Markdown documents.</p>
-                        <h2 id="some-other-languages---escape-characters" style="color:#0086b3">SOME OTHER LANGUAGES - ESCAPE CHARACTERS </h2>
-                        <p>Escape characters are a fundamental concept in many programming languages beyond JSON and JavaScript. They serve the same core purpose: to allow you to represent special characters literally within strings or code. Here are some examples of languages that use escape characters and how they might be applied:</p>
-                        <p><strong>C/C++/Java:</strong></p>
-                        <ul>
-                        <li>Similar to JavaScript, these languages use backslashes (<code>\</code>) for escaping characters like:
-                        <ul>
-                        <li><code>\n</code> for newline</li>
-                        <li><code>\t</code> for tab</li>
-                        <li><code>\"</code> for double quote within a string</li>
-                        <li><code>\'</code> for single quote within a string (using double quotes as string delimiters)</li>
-                        </ul>
+                        <li>Refer to XML/XHTML specifications for a complete list of characters that might need
+                            escaping in specific contexts.</li>
+                    </ul>
+                    <p><strong>In summary:</strong> While escape characters aren't mandatory for all content in
+                        XML/XHTML, they become important when dealing with special characters within attribute
+                        values or including large sections of raw text.</p>
+                    <h3
+                                        id="here-are-some-examples-of-special-characters-within-attribute-values-in-xml-along-with-their-outputs">
+                        Here are some examples of special characters within attribute values in XML, along with
+                        their outputs: </h3>
+                    <p><strong>1. Less Than (<code>&lt;</code>)</strong></p>
+                    <ul>
+                        <li><strong>Example:</strong> <code>&lt;img src="&lt;invalid image URL&gt;" alt="Image with
+                                special characters"&gt;</code></li>
+                        <li><strong>Output:</strong> This will likely result in the image not being displayed
+                            correctly because the parser interprets the <code>&lt;</code> within the
+                            <code>src</code> attribute as the start of a new XML element.
                         </li>
-                        <li>Additionally, they might use octal (<code>\ followed by three octal digits</code>) and hexadecimal (<code>\x followed by two hexadecimal digits</code>) escapes for a wider range of characters.</li>
-                        </ul>
-                        <p><strong>Python:</strong></p>
-                        <ul>
-                        <li>Python primarily uses raw strings (prefixed with <code>r</code> or <code>R</code>) to include backslashes literally.
-                        <ul>
-                        <li><code>r"\n"</code> represents a backslash followed by an <code>n</code>.</li>
-                        </ul>
+                        <li><strong>Corrected Example:</strong> <code>&lt;img src="&amp;lt;invalid image
+                                URL&amp;gt;" alt="Image with special characters"&gt;</code></li>
+                        <li><strong>Output:</strong> Now, the <code>&lt;</code> symbol is displayed literally as
+                            "&lt;" because it's escaped using a character reference.</li>
+                    </ul>
+                    <p><strong>2. Greater Than (<code>&gt;</code>)</strong></p>
+                    <ul>
+                        <li><strong>Example:</strong> <code>&lt;button onclick="alert('This message has &gt; in
+                                it')"&gt;Click Me&lt;/button&gt;</code></li>
+                        <li><strong>Output:</strong> This might cause a parsing error depending on the XML
+                            processor. The <code>&gt;</code> within the <code>onclick</code> attribute might be
+                            interpreted as the end of the opening <code>&lt;button&gt;</code> tag.</li>
+                        <li><strong>Corrected Example:</strong> <code>&lt;button onclick="alert('This message has
+                                &amp;gt; in it')"&gt;Click Me&lt;/button&gt;</code></li>
+                        <li><strong>Output:</strong> Here, the <code>&gt;</code> symbol is displayed literally as
+                            "&gt;" using the character reference.</li>
+                    </ul>
+                    <p><strong>3. Ampersand (<code>&amp;</code>)</strong></p>
+                    <ul>
+                        <li><strong>Example:</strong> <code>&lt;a
+                                href="http://www.example.com&amp;param1=value1"&gt;Link Text&lt;/a&gt;</code></li>
+                        <li><strong>Output:</strong> This might cause unexpected behavior. The parser might
+                            interpret the <code>&amp;</code> as the start of a character reference, leading to
+                            errors.</li>
+                        <li><strong>Corrected Example:</strong> <code>&lt;a
+                                href="http://www.example.com?param1=value1"&gt;Link Text&lt;/a&gt;</code></li>
+                        <li><strong>Output:</strong> In this case, the <code>&amp;</code> is used for its intended
+                            purpose within a URL query string (separating parameters).</li>
+                    </ul>
+                    <p><strong>4. Apostrophe (<code>'</code>)</strong></p>
+                    <ul>
+                        <li><strong>Example:</strong> <code>&lt;input type="text" value="He said, 'Isn't this
+                                cool?'"&gt;</code></li>
+                        <li><strong>Output:</strong> This could lead to errors if double quotes are used as the
+                            element's opening and closing quotes.</li>
+                        <li><strong>Corrected Example (using double quotes):</strong> <code>&lt;input type="text"
+                                value="He said, &amp;quot;Isn't this cool?&amp;quot;"&gt;</code></li>
+                        <li><strong>Corrected Example (using single quotes as element quotes):</strong>
+                            <code>&lt;input type='text' value='He said, "Isn\'t this cool?"'&gt;</code> (Escape the
+                            double quote within the value)
+                        </li>
+                    </ul>
+                    <p><strong>5. Double Quote (<code>"</code>)</strong></p>
+                    <ul>
+                        <li><strong>Example:</strong> <code>&lt;p title="This title has a "double quote"
+                                inside."&gt;</code></li>
+                        <li><strong>Output:</strong> This will likely cause a parsing error because double quotes
+                            are used as the element's opening and closing quotes.</li>
+                        <li><strong>Corrected Example (using single quotes):</strong> <code>&lt;p title='This title
+                                has a "double quote" inside.'&gt;</code> (Escape the double quote within the value)
+                        </li>
+                        <li><strong>Corrected Example (using double quotes as attribute value):</strong> <code>&lt;p
+                                title="This title has a &amp;quot;double quote&amp;quot; inside."&gt;</code> (Escape
+                            the double quote using a character reference)</li>
+                    </ul>
+                    <p><strong>Remember:</strong> The specific characters that need escaping can vary depending on
+                        the context and the XML parser being used. It's always a good practice to escape these
+                        characters when in doubt to ensure proper parsing and avoid potential errors.</p>
+
+
+                    <!-- +++======== --><!-- +++ 4 MARKDOWN - ESCAPE
+                            CHARACTERS -->
+                    <h2 id="markdown---escape-characters" style="color:#0086b3"><span id="section4">MARKDOWN - ESCAPE
+                            CHARACTERS </span></h2>
+                    <p>Markdown uses backslashes (<code>\</code>) to escape a small set of characters that would
+                        otherwise have special formatting meanings within the language. Here's a breakdown of some
+                        common escape characters in Markdown:</p>
+                    <p><strong>1. Asterisk (<code>\*</code>)</strong></p>
+                    <ul>
+                        <li><strong>Purpose:</strong> Normally, asterisks are used for creating bulleted lists. By
+                            escaping it, you can display an asterisk literally.</li>
+                        <li><strong>Example:</strong> <code>This sentence includes an asterisk \* for
+                                emphasis.</code> (Output: This sentence includes an asterisk * for emphasis.)</li>
+                    </ul>
+                    <p><strong>2. Underscore (<code>\_</code>)</strong></p>
+                    <ul>
+                        <li><strong>Purpose:</strong> Underscores are typically used for italics. Escaping allows
+                            you to display them as underscores.</li>
+                        <li><strong>Example:</strong> <code>We have a_special_case here that shouldn't be
+                                italicized.</code> (Output: We have a_special_case here that shouldn't be
+                            italicized.)</li>
+                    </ul>
+                    <p><strong>3. Backtick (<code>\</code>)</strong></p>
+                    <ul>
+                        <li><strong>Purpose:</strong> Backticks are used for inline code snippets. Escaping allows
+                            you to display a backtick character.</li>
+                        <li><strong>Example:</strong> <code>The command is written as \</code>ls`.<code>(Output: The
+                                command is written as</code>ls`.)</li>
+                    </ul>
+                    <p><strong>4. Hash (<code>\#</code>)</strong></p>
+                    <ul>
+                        <li><strong>Purpose:</strong> Hashes are used for creating headings. Escaping allows you to
+                            display a hash symbol.</li>
+                        <li><strong>Example:</strong> <code>Use \# marks sparingly for better readability.</code>
+                            (Output: Use # marks sparingly for better readability.)</li>
+                    </ul>
+                    <p><strong>5. Other Characters</strong></p>
+                    <ul>
+                        <li>Markdown also allows escaping some punctuation marks like parentheses (<code>\(</code>
+                            and <code>\)</code>), square brackets (<code>\[</code> and <code>\]</code>), curly
+                            braces (<code>\{</code> and <code>\}</code>), plus sign (<code>\+</code>), minus sign
+                            (<code>\-</code>), and pipe (<code>\|</code>) to display them literally.</li>
+                    </ul>
+                    <p><strong>Important Notes:</strong></p>
+                    <ul>
+                        <li>Escaping is generally not needed for most alphanumeric characters or symbols.</li>
+                        <li>Overuse of escaping can make your Markdown less readable. Use it only when necessary.
+                        </li>
+                        <li>Some Markdown renderers might support additional escape sequences, so refer to the
+                            specific flavor you're using for a comprehensive list.</li>
+                    </ul>
+                    <p>By understanding these escape characters, you can gain more control over how your text
+                        appears in Markdown documents.</p>
+
+
+                    <!-- +++======== --><!-- +++ 5 SOME
+                            OTHER LANGUAGES -
+                            ESCAPE CHARACTERS -->
+                    <h2 id="some-other-languages---escape-characters" style="color:#0086b3"><span id="section5">SOME
+                            OTHER LANGUAGES -
+                            ESCAPE CHARACTERS </span></h2>
+                    <p>Escape characters are a fundamental concept in many programming languages beyond JSON and
+                        JavaScript. They serve the same core purpose: to allow you to represent special characters
+                        literally within strings or code. Here are some examples of languages that use escape
+                        characters and how they might be applied:</p>
+                    <p><strong>C/C++/Java:</strong></p>
+                    <ul>
+                        <li>Similar to JavaScript, these languages use backslashes (<code>\</code>) for escaping
+                            characters like:
+                            <ul>
+                                <li><code>\n</code> for newline</li>
+                                <li><code>\t</code> for tab</li>
+                                <li><code>\"</code> for double quote within a string</li>
+                                <li><code>\'</code> for single quote within a string (using double quotes as string
+                                    delimiters)</li>
+                            </ul>
+                        </li>
+                        <li>Additionally, they might use octal (<code>\ followed by three octal digits</code>) and
+                            hexadecimal (<code>\x followed by two hexadecimal digits</code>) escapes for a wider
+                            range of characters.</li>
+                    </ul>
+                    <p><strong>Python:</strong></p>
+                    <ul>
+                        <li>Python primarily uses raw strings (prefixed with <code>r</code> or <code>R</code>) to
+                            include backslashes literally.
+                            <ul>
+                                <li><code>r"\n"</code> represents a backslash followed by an <code>n</code>.</li>
+                            </ul>
                         </li>
                         <li>For specific escape sequences, it might use:
-                        <ul>
-                        <li><code>\'</code> for single quote within a string (using double quotes as delimiters)</li>
-                        <li><code>\"</code> for double quote within a string (using single quotes as delimiters)</li>
-                        </ul>
+                            <ul>
+                                <li><code>\'</code> for single quote within a string (using double quotes as
+                                    delimiters)</li>
+                                <li><code>\"</code> for double quote within a string (using single quotes as
+                                    delimiters)</li>
+                            </ul>
                         </li>
-                        </ul>
-                        <p><strong>PHP:</strong></p>
-                        <ul>
+                    </ul>
+                    <p><strong>PHP:</strong></p>
+                    <ul>
                         <li>Similar to C-style languages, PHP uses backslashes (<code>\</code>) for escaping:
-                        <ul>
-                        <li><code>\n</code> for newline</li>
-                        <li><code>\t</code> for tab</li>
-                        <li><code>\"</code> for double quote within a string</li>
-                        <li><code>\'</code> for single quote within a string</li>
-                        </ul>
+                            <ul>
+                                <li><code>\n</code> for newline</li>
+                                <li><code>\t</code> for tab</li>
+                                <li><code>\"</code> for double quote within a string</li>
+                                <li><code>\'</code> for single quote within a string</li>
+                            </ul>
                         </li>
-                        <li>Additionally, it offers heredoc and nowdoc syntax for multi-line strings that preserve formatting without escaping.</li>
-                        </ul>
-                        <p><strong>Regular Expressions:</strong></p>
-                        <ul>
-                        <li>Regular expressions (used for pattern matching in text) often have their own escape sequences within various languages. These escapes help define special characters within the pattern itself.
-                        <ul>
-                        <li>For example, <code>\d</code> might match any digit, <code>\w</code> any word character, and <code>\.</code> might match a literal period (<code>.</code>).</li>
-                        </ul>
+                        <li>Additionally, it offers heredoc and nowdoc syntax for multi-line strings that preserve
+                            formatting without escaping.</li>
+                    </ul>
+                    <p><strong>Regular Expressions:</strong></p>
+                    <ul>
+                        <li>Regular expressions (used for pattern matching in text) often have their own escape
+                            sequences within various languages. These escapes help define special characters within
+                            the pattern itself.
+                            <ul>
+                                <li>For example, <code>\d</code> might match any digit, <code>\w</code> any word
+                                    character, and <code>\.</code> might match a literal period (<code>.</code>).
+                                </li>
+                            </ul>
                         </li>
-                        </ul>
-                        <p><strong>Remember:</strong></p>
-                        <ul>
+                    </ul>
+                    <p><strong>Remember:</strong></p>
+                    <ul>
                         <li>The specific escape characters and their usage can vary slightly between languages.</li>
-                        <li>It's always best to consult the language's documentation for a complete list and proper usage guidelines.</li>
-                        </ul>
-                        
-                              </div>         
-                            
-                          
-                            
-                    </div>
+                        <li>It's always best to consult the language's documentation for a complete list and proper
+                            usage guidelines.</li>
+                    </ul>
+
                 </div>
+
+
+
+
+                <!-- ++. +++++++++++++++++++++ -->
+
             </div>
 
-
-            <!-- +++======== --><!-- +++ SIDEBAR GRID HTML -->
-            <div class="abks-grid-item-sidebar">
-
-                <div class="abks-grd-item-sidebar-subgrd">
-                    <div class="prgrf-yayn text-yayn">
-                        <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 1</h2>
-                        <p>Some Text</p>
-                    </div>
-                </div>
-
-                <div class="abks-grd-item-sidebar-subgrd">
-                    <div class="prgrf-yayn text-yayn">
-                        <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 2</h2>
-                        <p>Some Text</p>
-                    </div>
-                </div>
-
-                <div class="abks-grd-item-sidebar-subgrd">
-                    <div class="prgrf-yayn text-yayn">
-                        <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 3</h2>
-                        <p>Some Text</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- +++======== --><!-- +++ FOOTER GRID HTML -->
-            <div class="abks-grid-item-footer">
-                <h1 class="h-yayn h1-yayn" style="color:white;">FOOTER</h1>
-            </div>
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Sidebar.html");</script>
+            <script>HTMLImporter.import("../ANAYAPI/ABKS-Footer.html");</script>
 
         </div>
+
 
     </body>
 

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>FIRTINA TAKVİMİ</title>
+
+
+		<style id="tablom-style" type="text/css">
+			/* FIRTINA TAKVİMİ BAŞI */
+
+			* {
+				box-sizing: border-box;
+			}
+
+			#tablom-div {
+				display: none;
+				margin: auto;
+			}
+
+			#tablom {
+				font-size: 14px;
+				font-family: Sans-serif, Arial, Helvetica;
+				margin: auto;
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+
+			#tablom-caption {
+				display: table-caption;
+				text-align: center;
+				font-weight: bold;
+				color: #8B5713;
+			}
+
+			.tablom-td {
+				display: table-cell;
+				vertical-align: top;
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+
+			.tablom-td-ilk {
+				background-color: #D9F99A;
+			}
+
+			.tablom-td-yaz {
+				background-color: #FF8F8F;
+			}
+
+			.tablom-td-son {
+				background-color: #FFFC8F;
+			}
+
+			.tablom-td-kis {
+				background-color: #ffffff;
+			}
+
+			.tablom-ul {
+				list-style-type: none;
+				text-align: left;
+				padding: 10px;
+			}
+
+			.tablom-li-basliklar {
+				font-weight: bold;
+				text-align: center;
+				color: #8B5713;
+			}
+
+			/* Her ne kadar tiklinki sidebar link rengi csssine bağladıysam da bir türlü o link rengini tutturamadım.Hep açık bir renk çıktı. Ben de ayrı bir css yazdım tiklinke. Sidebar link rengi out for this */
+			#tablom-tiklink {
+				color: #48689b;
+				transition-duration: 0.1s;
+				font: bold 13px;
+				font-family: Sans-serif, Arial, Helvetica;
+				padding: 5px 5px 5px 0;
+				margin: 0;
+				cursor: pointer;
+			}
+
+			#tablom-tiklink-list {
+				list-style-position: inside;
+				font: bold 13px arial, sans-serif;
+				list-style-type: none;
+				list-style-position: inside;
+				list-style-image: url('https://drive.google.com/uc?id=1oDgPsg_7sLzOPQbTzz6kiTUVFB1UV-hE');
+			}
+
+			/* List ikonu: Yalın ve dönüştürülmüş halde:
+https://drive.google.com/file/d/1oDgPsg_7sLzOPQbTzz6kiTUVFB1UV-hE/view?usp=sharing
+https://drive.google.com/uc?id=1oDgPsg_7sLzOPQbTzz6kiTUVFB1UV-hE */
+
+			#tablom-tiklink:hover {
+				color: #3ac426;
+
+			}
+
+			#tablom-tiklink:focus {
+				color: #FF5600;
+			}
+
+			/* FIRTINA TAKVİMİ SONU */
+		</style>
+
+
+	</head>
+
+	<body>
+
+		<!-- <div style="overflow-x:auto;" Bu tagin içine alarak tabloyu responsible yapıyoruz.Pencere değişimine göre boyutunu otomatik ayarlıyor.-->
+
+		<div id="tablom-div" style="overflow-x:auto;">
+			<table id="tablom">
+				<caption id="tablom-caption">
+					<p style="font-size:18px;">FIRTINA TAKVİMİ</p>
+					<p style="font-weight:normal; font-style: italic;">KAYNAK: Dz. K.K. Yıllık Ajandasının Fırtına
+						Takvimi</p>
+				</caption>
+				<tr>
+					<td class="tablom-td tablom-td-kis">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">OCAK</li><br />
+							<li>1 &nbsp;● Fırtına ( 3 Gün )</li>
+							<li>9 &nbsp;● Zemheri Fırtınası</li>
+							<li>13 ● Fırtına (2 gün)</li>
+							<li>18 ● Fırtına</li>
+							<li>24 ● Fırtına (Kışın şiddeti)</li>
+							<li>30 ● Ayandon Fırtınası</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-kis">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">ŞUBAT</li><br />
+							<li>1 &nbsp;● Hamsini fırtınası (3 gün)</li>
+							<li>5 &nbsp;● Fırtına</li>
+							<li>11 ● Fırtına (3 gün)<br />(Soğuklar Artıyor)</li>
+							<li>20 ● Fırtına (1.cemre havaya)</li>
+							<li>27 ● Fırtına (2.cemre suya)</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-ilk">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">MART</li><br />
+							<li>6 &nbsp;● Fırtına<br />(3.cemre toprağa)</li>
+							<li>11 ● Fırtına<br />(Kocakarı soğuğu)</li>
+							<li>24 ● Koz kavuran fırtınası</li>
+							<li>26 ● Çardak fırtınası</li>
+							<li>29 ● Fırtına</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="tablom-td tablom-td-ilk">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">NİSAN</li><br />
+							<li>7 &nbsp;● Kırlangıç fırtınası</li>
+							<li>12 ● Fırtına</li>
+							<li>18 ● Kuğu fırtınası</li>
+							<li>28 ● Fırtına (3 gün)</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-ilk">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">MAYIS</li><br />
+							<li>4 &nbsp;● Çiçek fırtınası</li>
+							<li>8 &nbsp;● Fırtına</li>
+							<li>16 ● Filizkıran fırtınası</li>
+							<li>20 ● Kokuyla fırtınası</li>
+							<li>22 ● Ülker fırtınası</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-yaz">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">HAZİRAN</li><br />
+							<li>3 &nbsp;● Fırtına (2 gün)</li>
+							<li>9 &nbsp;● Fırtına (3 gün)</li>
+							<li>22 ● Gün dönümü fırtınası</li>
+							<li>27 ● Kızıl erik fırtınası</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="tablom-td tablom-td-yaz">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">TEMMUZ</li><br />
+							<li>1 &nbsp;● Yaprak fırtınası</li>
+							<li>6 &nbsp;● Fırtına</li>
+							<li>9 &nbsp;● Çark dönüşü fırtınası</li>
+							<li>16 ● Fırtına</li>
+							<li>26 ● Kara erik fırtınası</li>
+							<li>31 ● Kızıl erik fırtınası</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-yaz">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">AĞUSTOS</li><br />
+							<li>12 ● Fırtına (2 gün)</li>
+							<li>21 ● Fırtına</li>
+							<li>31 ● Mercan fırtınası</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-son">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">EYLÜL</li><br />
+							<li>6 &nbsp;● Bıldırcın geçimi fırtınası</li>
+							<li>13 ● Çaylak fırtınası</li>
+							<li>19 ● Fırtına</li>
+							<li>24 ● Kestane karası fırtınası</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td class="tablom-td tablom-td-son">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">EKİM</li><br />
+							<li>1 &nbsp;● Turna geçimi fırtınası</li>
+							<li>4 &nbsp;● Kuş geçimi fırtınası</li>
+							<li>13 ● Meryem Ana fırtınası</li>
+							<li>17 ● Kırlangıç fırtınası</li>
+							<li>19 ● Bağ bozumu fırtınası</li>
+							<li>28 ● Balık fırtınası</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-son">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">KASIM</li><br />
+							<li>17 ● Koç katımı fırtınası</li>
+							<li>24 ● Ülker dönümü fırtınası</li>
+						</ul>
+					</td>
+					<td class="tablom-td tablom-td-kis">
+						<ul class="tablom-ul">
+							<li class="tablom-li-basliklar">ARALIK</li><br />
+							<li>6 &nbsp;● Fırtına (2 gün)</li>
+							<li>10 ● Karakış fırtınası</li>
+							<li>15 ● Fırtına (3 gün)</li>
+							<li>20 ● Fırtına</li>
+							<li>21 ● Gün dönümü fırtınası</li>
+						</ul>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+
+		<div>
+			<li id="tablom-tiklink-list"><a id="tablom-tiklink" title="Fırtına Takvimini Aç">"FIRTINA TAKVİMİ"</a></li>
+		</div>
+
+
+		<!-- Link Titles:The title attribute specifies extra information about an element. The information is most often shown as a tooltip text when the mouse moves over the element. -->
+
+
+		<!-- ● Link değil DÜĞME ile yaparsan şu kod.Aşağıdaki scriptin orijinal kodu da bu. <button id=""tablom-button">FIRTINA TAKVİMİ</button> 
+Bu da düğmeye css. Kenarlıksız renksiz link gibi çıkar halde: 
+#tablom-button {   
+  background-color: transparent; 
+  border: none;
+  font: bold 13px arial, sans -serif;
+  color: #416f96;
+  padding: 5px 5px 5px 0;
+  margin: 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+}   -->
+
+		<!-- ● SPANla yaparsan,"span" tagi "li" içinde inline bir satır açtığı için ve iç satıra imagı background olarak atadığı için, arka planı döşeme usulüyle tümden kaplamasın diye; (class="sidebar-link-rengi") CSSsine "no repeat" ekle.
+  <li><span class="sidebar-link-rengi"><a id="tablom-tiklink">FIRTINA TAKVİMİ</a></span></li>
+  
+  ● Doğrudan şöyle de oluyor:
+  <a id="tablom-tiklink" class='sidebar-link-rengi'></a> -->
+
+
+
+		<script>
+			document.getElementById("tablom-tiklink").addEventListener("click", function () {
+				var newWindowContent = document.getElementById('tablom-div').innerHTML;
+				var newWindow = window.open("", "", "width=700,height=600")
+				newWindow.document.write(newWindowContent, '<style>' + document.getElementById('tablom-style').innerHTML + '</style>');
+
+			});
+
+		</script>
+
+
+	</body>
+
+</html>

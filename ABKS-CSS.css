@@ -3,6 +3,22 @@
 }
 
 
+/*+++<!-- +++======== --><!-- +++ LINKLER  -->*/
+
+/* GELİŞTİR,BİRLEŞTİR: 
+* https://www.w3schools.com/html/html_links_colors.asp
+* The A tag comes with three attributes that can help you to override the browser default:
+LINK
+Set the colour of a link before it has been clicked on
+ALINK
+Set the colour of a link when the link is clicked on
+VLINK
+Set the colour of a link after it has been clicked on
+The A and the V above stand for Active and Visited. You use them like this:
+<A HREF="pages/about.html" LINK="red">About this site</A> */
+
+
+
 /* !! LINK RENGIM BASI - Eski adı: sidebar-link rengi */
 .link-rengim {
     color: #48689b;
@@ -61,8 +77,14 @@ Blogger Sidebar link rengine bağladığımda aynı rengi tutturamadığım içi
 
 /* !! AYRIK CSS SONU: */
 
-/**
-*+++ <!-- +++======== --><!-- +++ BUTTON -->*/
+/* !! DEVAMINI OKU */
+.devamıOku-link {
+    /* display: inline; */
+    text-align: right;
+}
+
+
+/*+++ <!-- +++======== --><!-- +++ BUTTON -->*/
 /* !! BUTTON: DEVAMINI OKU DÜĞMEM BASI */
 .yayn-cagrı-devamıOku {
     /* display: inline-block; */
@@ -94,7 +116,7 @@ for the <body> element. */
     color: #3ac426;
 }
 
-/* ? Buttonın floatını clearfix::after aklıyla temizle */
+/* ?? Buttonın floatını clearfix::after aklıyla temizle */
 .yayn-cagrı-devamıOku::after {
     content: "";
     clear: both;
@@ -104,8 +126,7 @@ for the <body> element. */
 .yayn-cagrı-devamıOku a {
     text-decoration: none;
 }
-
-/* !! DEVAMINI OKU DÜĞMEM BASI */
+/* !! DEVAMINI OKU DÜĞMEM SONU */
 
 
 /* !! GADGET ARKA PLAN BASI */
@@ -115,7 +136,6 @@ for the <body> element. */
     border-radius: 12px;
     padding: 8px;
 }
-
 /* !! GADGET ARKA PLAN SONU */
 
 
@@ -233,34 +253,45 @@ for the <body> element. */
 
 /**
 *+++ <!-- +++======== --><!-- +++ BAŞLIKLAR -->*/
-/* H1'i yalnızca header,footer vb yapıların ana tanımlayıcısı olarak kullan. FOOTER mesela.Makale başlıkları veya sidebar grupsal başlıkları için H2 kullan.  */
+/* H1: MDN: Avoid using multiple <h1> elements on one page*/
+/* Başlıkları atlamadan git. Örneğin 1den sonra 3 gelmez.
+MDN: Navigation: A common navigation technique for users of screen reading software is to quickly jump from heading to heading in order to determine the content of the page. Because of this, it is important to not skip one or more heading levels. Doing so may create confusion, as the person navigating this way may be left wondering where the missing heading is. */
 /* Başlıkların tekrar edenlerini silip H CSSsini kısalttım. Dolayısıyla classlara h-yayn ve h?-yayn kaçsa birlikte girmen gerekiyor. */
+
 .h-yayn {
     display: block;
-    color: #663508;
+    /* color: #663508; */
     opacity: 1;
     /* font-family: Verdana, Arial, Sans-serif, Helvetica; */
-    font-size: 200%;
+    /* font-size: 200%; */
     font-weight: normal;
     text-align: center;
-    margin: 1em;
+    word-wrap: break-word;
+    margin: 5px;
+    /* ^ Default margins of H: margin-top: 0.67em; / margin-bottom: 0.67em; / margin-left: 0; /  margin-right: 0; */
+    
+
     -webkit-transition: 0.1s;
     transition: 0.1s;
-    /* Note that we have added the CSS transition property  to animate the border color (takes 0.5 seconds to change the color on focus.0.1 yaptım.
+    /* ^ Note that we have added the CSS transition property  to animate the border color (takes 0.5 seconds to change the color on focus.0.1 yaptım.
 Aldığım örnekte yukarıdaki ana class grubuna eklenmiş bu özellik .Focus özellikli bir iş yapmasına rağmen.Aşağıda focus bölümüne color ve border ekledim. Dolayısıyla bu eklediklerimi oynatıyor.Kaç saniyeyse o süre boyunca animasyon sürüyor. input[type=number] veya mesela:
 div { width: 100px; height: 100px; background: red;  transition: width 2s; }
 div:hover { width: 300px; }  div:hover daki 300px'ele genişler div hover edince. */
-    cursor: pointer;
-    /* (cursor: pointer;) Yani imleç el oluyor ilgili noktaya yani input alanına odaklanınca.Burada input için.İptal,çünkü bir şey yazacak,sayı girecek ve odaklanınca çizgiye dönüşmesi daha iyi bu durumda.Bu cssyi kaldırınca (cursor: default;) oluyor kendiliğinden.  */
+
+    /* cursor: pointer; */
+    /*^ (cursor: pointer;) Yani imleç el oluyor ilgili noktaya yani input alanına odaklanınca. Linklerin default valuesü "cursor: auto;" şeklinde. 
+    1) Başlıklar için iptal. Çünkü sadece bir yazı o. Eğer başlığa link eklmişsem varsayılan auto değeri linki görünce ele dönüşüyor zaten. Bazen vurgulamak gerekebilir diye dursun.
+    2) Burada input için.İptal,çünkü bir şey yazacak,sayı girecek ve odaklanınca çizgiye dönüşmesi daha iyi bu durumda.Bu cssyi kaldırınca (cursor: default;) oluyor kendiliğinden.  */
+
     text-decoration: none;
-    /* text-decoration; altı çizili,üstü çizili,başı noktalı gibi text stillerini tanımlar. 
+    /* ^ text-decoration; altı çizili,üstü çizili,başı noktalı gibi text stillerini tanımlar. 
 "All links in HTML are underlined by default. Sometimes you see that links are styled with no underline. The text-decoration: none; is used to remove the underline from links.
 Bu cssyi linkli bir formdan almıştım. Converterımda link yok ama dursun zararı yok.
 */
 }
 
 /**
-*todo: Yayn gridlerini yapınca bunu güncelle. */
+*todo: Yayn gridlerini yapınca bunu güncelle. Başlık 3e bağladım. */
 .h-yayn-yanbaslik {
     text-align: left;
     margin-left: 20%;
@@ -302,6 +333,7 @@ Bu cssyi linkli bir formdan almıştım. Converterımda link yok ama dursun zara
 *+++ <!-- +++======== --><!-- +++ prgrf-yayn -->*/
 .prgrf-yayn {
     display: block;
+
     color: #242424;
     /* font-family: Verdana, Arial, Sans-serif, Helvetica; */
     font-size: 110%;
@@ -362,7 +394,8 @@ Toplam: 30 + 15 + 20 = 94%
 }
 
 .hr-hizilText-yayn {
-    display: inline-block;
+    /* display: inline-block; */
+
     color: #663508;
     font-size: 80%;
     font-weight: bold;
@@ -386,71 +419,41 @@ Toplam: 30 + 15 + 20 = 94%
 /**
 *+++ <!-- +++======== --><!-- +++ ABKS.INDEX CSS -->*/
 /**
-*+++ <!-- +++======== --><!-- +++ ANA GRID CONTAINER CSS -->*/
-/**
-            *?? GRID CONTAINER CSS */
+*+++ <!-- +++======== --><!-- +++ TEMEL GRID CONTAINER -->*/
 .abks-grid-container {
     display: grid;
-    /* Sayfamın hepsini 12 sütuna oturtup spanlarla ayarladım genişlikleri. */
-    grid-column: 12 / span 12;
+    /*^ Sayfamın hepsini 12 sütuna oturtup spanlarla ayarladım genişlikleri. */
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    /*^ Bu da iyi çalışıyor:  grid-column: 12 / span 12; */
     grid-row: 4 / span 4;
-
-    /* Bu da iyi çalışıyor. Ama sidebarı bazen mainin altına kaçıran neden sondaki extra 1 fr olabilir. */
-    /* grid-template-columns: repeat(12, minmax(0, 1fr)); */
     background-color: #fc7609;
-    /*  Bu gap ana gövde çevresine ve iç gövdelerin çevresine birden çizgi çekiyor.??? */
-    /* gap: 4px; */
-    /* Bu ana container borderı yalnızca ana gövdenin çavresine bir çizgi çekiyor. İç 4 gövdenin çevrelerini ellemiyor, çünkü inherited değil. Bkz.w3c. İtemlar için ayrı border atamak gerekiyor. */
-    /* border: 4px solid #084258;
-                border-radius: 5px; */
+    /*^ 1) BORDER: Bu ana container borderı yalnızca ana gövdenin dış çevresine bir çizgi çekiyor. İç 4 Item gövdesinin çevrelerini ellemiyor, çünkü inherited değil. Bkz.w3c. İtemları borderlandırmak istiyorsan herbiri için ayrı border atamak gerekiyor.   2) BORDER: solid eklemezsen border varsayılan değeri solid olmasına rağmen border ortaya çıkmıyor.   3) BORDER noktasında: Aralara gap girmişsen aralar açıldığı için OK ama gapsizse yanlardaki çizgilerin bitişip çiftleşerek kalınlaşmasına karşı outline kullanabilirsin: ÖRN: outline: 22px solid black;*/
+    border: 10px solid #04f518;
+    border-radius: 5px;
+    /*^  Bu gap ana gövde dış çevresini ellemiyor, ama tüm iç Item gövdelerinin çevrelerine gap ekliyor. */
+    gap: 18px;
     /* padding: 10px; */
-
-
-    /**
-* !! İŞLİK */
-    /*  */
-    
-    /* The align-content property is used to vertically align the whole grid
-inside the container. */
-    /* Zaten öyleler ama bi̇r taşma durumunda dişari kaçmak yeri̇ne bi̇rbi̇rleri̇ne yaslanarak bütün kalsinlar di̇ye düşünerek*/
-
+    /* Gerekebilir:  grid-template-columns: 80% auto; */
 }
 
-
-
-
-
 /**
-*+++ <!-- +++======== --><!-- +++ HEADER CSS -->*/
+*+++ <!-- +++======== --><!-- +++ HEADER -->*/
 .abks-grid-item-header {
     grid-column: 1 / span 12;
     grid-row: 1 / span 1;
-
     font-size: 1em;
     font-style: italic;
     text-align: center;
     background-color: #463929;
     color: white;
     padding: 2%;
-    /* gap: 4px; */
-    /* border: 4px solid #084258;
-                border-radius: 5px; */
+    border: 4px solid #04f518;
+    border-radius: 5px;
+    gap: 4px;
 }
 
-/** DİĞER ITEM VALUES:
-            *^ HEIGHT: Aşağıdaki yükseklikler gerekirse ana gridlerin veya subgridlerin satır yüksekliklerini  ayarlamak için kullanılabilir. Unutma satırlar span edilmiş olsa bile yalnızca tek satırda etkililer */
-/* height: auto; */
-/* height: fit-content; */
-/* min-height: 10%;
-                max-height: 20%; */
-
-/**
-            *^ BORDER: solid eklemezsen varsayılanı solidse de border çıkmıyor. Ana contai̇nera da gi̇rebi̇li̇rsi̇n BUNLARI tümüne bi̇rden uygulamak i̇çi̇n. */
-/* border: 18px solid black; */
-/* border-radius: 7px; */
-/* Border noktasında: Aralara gap girmişsen OK ama gapsizse yanlardaki çizgilerin çiftleyip kalınlaşmasına karşı outline kullanabilirsin */
-/* outline: 22px solid black; */
-
+/** ITEMLAR İÇİN GEREKEBİLECEKLER NOTLARI: Hepsini burada topladım tekrardan kaçınmak için.
+*^ HEIGHT: Aşağıdaki yükseklikler gerekirse ana gridlerin veya subgridlerin satır yüksekliklerini  ayarlamak için kullanılabilir. Unutma satırlar span edilmiş olsa bile yalnızca tek satırda etkililer: height: auto; / height: fit-content; / min-height: 10%; / max-height: 20%;*/
 
 /* Increase the font size of the <h1> element */
 .abks-grid-item-header h1 {
@@ -470,9 +473,8 @@ inside the container. */
     padding: 5px;
 }
 
-
 /**
-*+++ <!-- +++======== --><!-- +++ NAVBAR GRID CSS -->*/
+*+++ <!-- +++======== --><!-- +++ NAVBAR -->*/
 .abks-grid-item-navbar {
     grid-column: 1 / span 12;
     grid-row: 2 / span 1;
@@ -480,19 +482,10 @@ inside the container. */
     height: 70px;
     text-align: center;
     padding: 1%;
-    /* gap: 4px; */
-    /* border: 4px solid #084258;
-                border-radius: 5px; */
+    border: 4px solid #04f518;
+    border-radius: 5px;
+    gap: 4px;
 }
-
-
-/**
-            *^ Bu alttaki̇ bloğu, eğer mega menüyü vb navbarı dolduran uzun kodları kaldırıp yeni bir dosyada, sade bir şekilde bir şeyler denemek gerektiğinde işlerleştir; navbarın düzgün çıkması için. İşin bitince uncomment again. */
-/*   color: white;
-                padding: 10px;
-                border: 6px solid #084258;
-                border-radius: 5px; */
-
 
 /* Style the navigation bar links */
 .abks-grid-item-navbar a {
@@ -536,120 +529,85 @@ inside the container. */
 }
 
 /**
-*+++ <!-- +++======== --><!-- +++ YAYN-MAIN ITEM CSS -->*/
+*+++ <!-- +++======== --><!-- +++ MAIN and MAIN MKL -->*/
 .abks-grid-item-main {
     grid-column: 1 / span 9;
     grid-row: 3 / span 1;
     display: grid;
     grid-template-columns: subgrid;
     background-color: #f4fcff;
-    padding: 1em;
-    /* gap: 18px;
-    border: 4px solid #084258;
-    border-radius: 5px; */
-
-    /* !! işlik */
-    justify-self: left;
+    padding: 20px;
+    border: 4px solid #04f518;
+    border-radius: 5px;
+    gap: 18px;
+    /* Bkz; Sidebardaki align-contentli not. */
+    align-content: start;
 }
 
+/* ? Bu CSS bölümü makale sayfalarının farklı düzenini karşılamak için. Makalelerde bunu kullan. */
+.abks-grid-main-mkl {
+    grid-column: 1 / span 9;
+    grid-row: 3 / span 1;
+    background-color: #f4fcff;
+    padding: 40px;
+    border: 4px solid #04f518;
+    border-radius: 5px;
+    gap: 18px;
+    /* Bkz; Sidebardaki align-contentli not. */
+    align-content: start;
+}
 
 /**
-*+++ <!-- +++======== --><!-- +++YAYN-MAIN SUBGRID and @MEDIA: CSS -->*/
-.abks-grid-yayn-subgrid {
+*+++ <!-- +++======== --><!-- +++ MAIN YAYIN ÖZETLERİ SUBGRIDLERİ -->*/
+.abks-grid-yaynlr-subgrid {
     grid-column: 1 / span 9;
-    padding: 1em;
+    padding: 20px;
     height: 20em;
-    /* border: 4px solid #084258;
-                border-radius: 5px; */
     overflow: auto;
-    /* Bu da gerekebilir:  overflow: hidden; */
+    /*^ Gerekebilir:  overflow: hidden; */
+    border: 4px solid #04f518;
+    border-radius: 5px;
 }
 
-
-/* ?? SUBGRID @MEDIA */
-@media (max-width: 700px) {
-    .abks-grid-yayn-subgrid {
-        grid-column: 1 / span 12;
-        /* height: 20em; */
-        font-size: 90%;
-    }
-}
-
-.abks-grid-yaynSayfasi-subgrid {
-    grid-column: 1 / span 9;
-    /* border: 2px solid #084258;
-                border-radius: 5px; */
-    padding: 1em;
-}
-
-/* ?? SUBGRID yaynSayfasi @MEDIA */
-@media (max-width: 700px) {
-    .abks-grid-yaynSayfasi-subgrid {
-        grid-column: 1 / span 12;
-        font-size: 90%;
-    }
-}
-
+/* ^ Subgridleri buradaki: (grid-row: 3 / span 1;) gibi rowlama. Bozuluyorlar. Subgridler alttaki örnekte Temel gride göre 3. satırda 1 satır kapla olmuyor. Kendini bir üst containerdan yani  main sectiondan biliyor. Subgridler için bu ayar Main container içinde hayali bir 3. satırda bütün subgridleri tek subgridde iç içe birleştir demek oluyor. */
 
 /**
 *+++ <!-- +++======== --><!-- +++ SIDEBAR CSS -->*/
 .abks-grid-item-sidebar {
     grid-column: 10 / span 3;
     grid-row: 3 / span 1;
-
     display: grid;
     grid-template-columns: subgrid;
     background-color: #fff2cb;
-    /* padding: 1em; */
-    /* gap: 18px;
-                border: 4px solid #084258;
-                border-radius: 5px; */
-
-
-
-    /* !! işlik */
-
-    justify-self: right;
-    /* The justify-self property aligns a grid item within its grid cell in the inline (soldan sağa) direction. To align a grid item in block direction instead of inline direction, use align-self or align-items properties.*/
-
-    /* align-content: center; */
-    /* The align-content property is used to vertically align the whole grid
-inside the container. */
-
-    /* override the default stretch */
-    /* align-self: flex-start;  */
-    /* align-self: flex-end;  */
-    /* -ms-grid-column-align: end;  */
+    padding: 0px;
+    border: 4px solid #04f518;
+    border-radius: 5px;
+    gap: 18px;
+    align-content: start;
+    max-height: 100%;
 }
 
+/*^ align-content: start; ::: Escape Characters gibi uzun makalelerde subgridler. Sidebara eşit dağıldığı için biri taa başta, biri taa sonda oluyor. Bunun için sidebar içindekileri başa yaslayan bu kodu kullandım. OK. Makale içeriği, sidebardakilere göre çok kısa kalabilir gibi bir durumda makaleyi veya yayın özetlerini başa yaslanık tutmak gerekebilir diye;  main yayınlar ve main makale cssinde de kullandım bu değeri. Baştan hazır halde oldu. Deftere OK.
+ */
 
 /**
-* +++ <!-- +++======== --><!-- +++SIDEBAR SUBGRID: CSS --> */
+* +++ <!-- +++======== --><!-- +++ SIDEBAR SUBGRIDLERİ --> */
 .abks-grd-item-sidebar-subgrd {
     grid-column: 1 / span 3;
-    padding: 1em;
-    height: 15em;
-    /* border: 4px solid #084258;
-                border-radius: 5px; */
+    padding: 5px;
+    border: 4px solid #04f518;
+    border-radius: 5px;
     /* background-color: #fff2cb; */
-    overflow: auto;
-    /* Bu da gerekebilir:  overflow: hidden; */
+
+    /* todo: Buradakileri içeriğe göre kılacak kodu sapta. */
+    height: 15em;
+    /* height: auto; */
+    /* overflow: auto; */
+    /*^ Gerekebilir:  overflow: hidden; */
 }
 
-
 /**
-*?? SIDEBAR SUBGRID  @MEDIA */
-@media (max-width: 700px) {
-    .abks-grd-item-sidebar-subgrd {
-        grid-column: 1 / span 12;
-        height: 10em;
-        font-size: 90%;
-    }
-}
-
-
-/**
-*+++ <!-- +++======== --><!-- +++ FOOTER CSS -->*/
+*+++ <!-- +++======== --><!-- +++ FOOTER -->*/
 .abks-grid-item-footer {
     grid-column: 1 / span 12;
     grid-row: 4 / span 1;
@@ -658,41 +616,58 @@ inside the container. */
     background-color: #463929;
     color: #ffffff;
     padding: 1%;
-
-    /* gap: 4px; */
-    /* border: 4px solid #084258;
-                border-radius: 5px; */
+    border: 4px solid #04f518;
+    border-radius: 5px;
+    gap: 4px;
 }
-
 
 /**
 *+++ <!-- +++======== --><!-- +++ ANA @MEDIA CSS -->*/
 /**
-            *^ Buraya main ve sidebar için olanları eklemek yeterli. Diğerleri grid yapısı dolayısıyla ve satırlarında tek de kaldıkları için zaten responsive bir şekilde içindekilerle birlikte bozulmadan daralıyorlar. Ki: İçindekilerdeki mega menu falan zaten responsive. Ama ekli kalsınlar.  */
+*^ Buraya main ve sidebar için olanları eklemek yeterli. Diğerleri grid yapısı dolayısıyla ve satırlarında tek de kaldıkları için zaten responsive bir şekilde içindekilerle birlikte bozulmadan daralıyorlar. Ama ekli kalsınlar. */
 @media (max-width: 700px) {
     .abks-grid-container {
-        font-size: 90%;
+        font-size: 95%;
     }
 
     .abks-grid-item-header {
         grid-column: 1 / span 12;
+        grid-row: 1 / span 1;
     }
 
     .abks-grid-item-navbar {
         grid-column: 1 / span 12;
+        grid-row: 2 / span 1;
     }
 
     .abks-grid-item-main {
         grid-column: 1 / span 12;
+        grid-row: 3 / span 1;
+    }
+
+    .abks-grid-yaynlr-subgrid {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-main-mkl {
+        grid-column: 1 / span 12;
+        grid-row: 3 / span 1;
     }
 
     .abks-grid-item-sidebar {
+        grid-column: 1 / span 12;
+        grid-row: 4 / span 1;
+    }
+
+    .abks-grd-item-sidebar-subgrd {
         grid-column: 1 / span 12;
     }
 
     .abks-grid-item-footer {
         grid-column: 1 / span 12;
+        grid-row: 5 / span 1;
     }
 }
+
 
 /* !! ABAKUS .INDEX CSS SONU */

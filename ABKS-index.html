@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+    <head>
+
+       
+        <!-- +++======== --><!-- +++ BAGLAR -->
+
+        <meta charset="utf-8">
+        <meta name="description" content="DESCRIPTION">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible">
+        <title>ABAKUS</title>
+
+        <!-- ?? SERVİS ÇAĞIRMALARIM-->
+        <!-- <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script> -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                            crossorigin="anonymous"></script>
+        <!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+        <!-- <link rel="stylesheet" type="text/css" href="ABKS-CSS.css"> -->
+        <link rel="icon" href="ANAYAPI/ABKS.Faviconum-128x128-Yuvarlak.png" type="image/x-icon">
+
+
+        <!-- ?? INCLUDE AND RUN HTML SCRIPT -->
+        <script>
+            $(function () {
+                var includes = $('[data-include]')
+                $.each(includes, function () {
+                    var file = $(this).data('include')
+                    $(this).load(file)
+                })
+            })
+        </script>
+
+ 
+
+        <style>
+
+
+/**
+*+++ <!-- +++======== --><!-- +++ BAŞLIKLAR -->*/
+/* H1'i yalnızca header,footer vb yapıların ana tanımlayıcısı olarak ve bu yapıların root başlıkları için kullan. FOOTER mesela.Makale başlıkları veya sidebar ana başlığı vb için.  */
+/* Başlıkların tekrar edenlerini silip H CSSsini kısalttım. Dolayısıyla classlara h-yayn ve h?-yayn kaçsa birlikte girmen gerekiyor. */
+.h-yayn {
+    display: block;
+
+    color: #663508;
+    opacity: 1;
+    /* font-family: Verdana, Arial, Sans-serif, Helvetica; */
+    font-size: 200%;
+    font-weight: normal;
+    text-align: center;
+    margin: 10px;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    /* Note that we have added the CSS transition property  to animate the border color (takes 0.5 seconds to change the color on focus.0.1 yaptım.
+Aldığım örnekte yukarıdaki ana class grubuna eklenmiş bu özellik .Focus özellikli bir iş yapmasına rağmen.Aşağıda focus bölümüne color ve border ekledim. Dolayısıyla bu eklediklerimi oynatıyor.Kaç saniyeyse o süre boyunca animasyon sürüyor. input[type=number] veya mesela:
+div { width: 100px; height: 100px; background: red;  transition: width 2s; }
+div:hover { width: 300px; }  div:hover daki 300px'ele genişler div hover edince. */
+    cursor: pointer;
+    /* (cursor: pointer;) Yani imleç el oluyor ilgili noktaya yani input alanına odaklanınca.Burada input için.İptal,çünkü bir şey yazacak,sayı girecek ve odaklanınca çizgiye dönüşmesi daha iyi bu durumda.Bu cssyi kaldırınca (cursor: default;) oluyor kendiliğinden.  */
+    text-decoration: none;
+    /* text-decoration; altı çizili,üstü çizili,başı noktalı gibi text stillerini tanımlar. 
+"All links in HTML are underlined by default. Sometimes you see that links are styled with no underline. The text-decoration: none; is used to remove the underline from links.
+Bu cssyi linkli bir formdan almıştım. Converterımda link yok ama dursun zararı yok.
+*/
+}
+
+/**
+*todo: Yayn gridlerini yapınca bunu güncelle. */
+.h-yayn-yanbaslik {
+    text-align: left;
+    margin-left: 20%;
+    color: #ac9b03;
+    font-size: 2em;
+}
+
+.h1-yayn {
+    color: #4e2f00;
+    font-size: 190%;
+}
+
+.h2-yayn {
+    color: #0f5805;
+    font-size: 180%;
+}
+
+.h3-yayn {
+    color: #830303;
+    font-size: 170%;
+}
+
+.h4-yayn {
+    color: #055699;
+    font-size: 150%;
+}
+
+.h5-yayn {
+    color: #975204;
+    font-size: 140%;
+}
+
+.h6-yayn {
+    color: #320149;
+    font-size: 130%;
+}
+
+/**
+*+++ <!-- +++======== --><!-- +++ prgrf-yayn -->*/
+.prgrf-yayn {
+    display: block;
+
+    color: #242424;
+    /* font-family: Verdana, Arial, Sans-serif, Helvetica; */
+    font-size: 110%;
+    /* text-transform: uppercase; */
+    text-align: left;
+    text-indent: 20px;
+    /* Paragraf başı girintisi için text-indent kullan */
+    margin: 1px;
+    /* 4 Değer: (margin: 20px 15px 10px 5px;) birinci - üst, ikinci - sağ,
+üçüncü - alt, dördüncü - sol. YA DA: margin: 20px; This will add a 20-pixel margin to all sides of the body element.*/
+    /* Margin,çerçeveliymiş gibi düşünürsen yazıyı,çerçeveden sonraya ekler boşluğu. Margin de,padding de burada paragraf biçimlendirmesi söz konusu olduğu için, paragraftaki tüm satırlara ekliyor bu girintiyi. Top ve bottomlara gerek yok P'nin varsayılan margini iyi zaten. */
+    /* em: Relative to the font-size of the element (2em means 2
+times the size of the current font) */
+    padding: 1px;
+    /* Salt padding yazının (P'nin) dört yanına ekler. Yazı çerçeveliymiş gibi düşünürsen; çerçeveyle yazı arasını açar. */
+    /* background-color: #f4fcff; */
+    /* border: 2px solid powderblue; */
+    /* Çevresine çerçeve */
+}
+
+/**
+*+++ <!-- +++======== --><!-- +++ text-yayn -->*/
+.text-yayn {
+    letter-spacing: 0.2px;
+    /*  Örneğin -2px - Harfler arası açıklık */
+    word-spacing: 0.2px;
+    /* Örneğin -2px - Sözcükler arası açıklık */
+    line-height: 1.4;
+    /* Örneğin 0.8 - Satırlar arası Yükseklik*/
+    white-space: normal;
+    /* Extralık: nowrap - Satır sonlarında bölmeyesin. Dolayısıyla satır o paragraf bitene kadar uzuyor tek satır halinde. */
+}
+
+
+/* !! ABAKUS .INDEX CSS BASI */
+/**
+*+++ <!-- +++======== --><!-- +++ ABKS.INDEX CSS -->*/
+/**
+*+++ <!-- +++======== --><!-- +++ ANA GRID CONTAINER CSS -->*/
+/**
+            *?? GRID CONTAINER CSS */
+            .abks-grid-container {
+    display: grid;
+    /* Sayfamın hepsini 12 sütuna oturtup spanlarla ayarladım genişlikleri. */
+    /* grid-column: 12 / span 12; */
+    /* grid-row: 4 / span 4; */
+
+    /* Bu da iyi çalışıyor. Ama sidebarı bazen mainin altına kaçıran neden sondaki extra 1 fr olabilir. */
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    background-color: #fc7609;
+    /* padding: 10px; */
+    
+    /**
+* !! İŞLİK */
+grid-template-columns: 80% auto;
+}
+
+
+
+
+
+/**
+*+++ <!-- +++======== --><!-- +++ HEADER CSS -->*/
+.abks-grid-item-header {
+    grid-column: 1 / span 12;
+    grid-row: 1 / span 1;
+
+    font-size: 1em;
+    font-style: italic;
+    text-align: center;
+    background-color: #463929;
+    color: white;
+    padding: 2%;
+    /* gap: 4px; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+/* Increase the font size of the <h1> element */
+.abks-grid-item-header h1 {
+    font-size: 3em;
+    font-style: normal;
+    color: white;
+}
+
+#abks-divInHeader {
+    display: block;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: normal;
+    color: #ffffff;
+    text-align: center;
+    background-color: transparent;
+    padding: 5px;
+}
+
+
+/**
+*+++ <!-- +++======== --><!-- +++ NAVBAR GRID CSS -->*/
+.abks-grid-item-navbar {
+    grid-column: 1 / span 12;
+    grid-row: 2 / span 1;
+
+    background-color: #200017;
+    height: 70px;
+    text-align: center;
+    padding: 1%;
+    /* gap: 4px; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+
+
+/* Style the navigation bar links */
+.abks-grid-item-navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1%;
+    text-decoration: none;
+    font-size: 18px;
+    /* font-weight: bold; */
+}
+
+/* Right-aligned link */
+.abks-grid-item-navbar a.abks-grid-item-navbar-menu-right {
+    float: right;
+}
+
+/* Change color on hover */
+.abks-grid-item-navbar a:hover {
+    background-color: #d1ffd7;
+    color: black;
+}
+
+.abks-grid-item-navbar a:focus {
+    color: #09000f;
+    background-color: #f5faf6;
+    /* opacity: 1; */
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/**
+*?? abks-grid-item-navbar a @MEDIA */
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+    .abks-grid-item-navbar a {
+        float: none;
+        width: 100%;
+    }
+}
+
+/**
+*+++ <!-- +++======== --><!-- +++ YAYN-MAIN ITEM CSS -->*/
+.abks-grid-item-main {
+    /* grid-column: 1 / span 9; */
+    grid-row: 3 / span 1;
+
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: #f4fcff;
+    padding: 20px;
+    /* gap: 18px;
+    border: 4px solid #084258;
+    border-radius: 5px; */
+
+    /**
+    * !! işlik */
+    /* justify-self: left; */
+    /* grid-template-columns: 200px auto; */
+    /* grid-template-columns: 80% auto; */
+
+}
+
+
+/**
+*+++ <!-- +++======== --><!-- +++YAYN-MAIN SUBGRID and @MEDIA: CSS -->*/
+.abks-grid-yayn-subgrid {
+    /* grid-column: 1 / span 9; */
+    padding: 20px;
+    height: 20em;
+    
+    overflow: auto;
+    /* Bu da gerekebilir:  overflow: hidden; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+
+/* ?? SUBGRID @MEDIA */
+/* @media (max-width: 700px) {
+    .abks-grid-yayn-subgrid {
+        grid-column: 1 / span 12; */
+        /* height: 20em; */
+        /* font-size: 90%;
+    }
+} */
+
+/* .abks-grid-yaynSayfasi-subgrid {
+    grid-column: 1 / span 9;
+    padding: 20px; */
+    /* height: auto; */
+    /* height: 70em; */
+    /* border: 2px solid #084258;
+                border-radius: 5px; */
+    /* overflow: auto; */
+/* } */
+
+/* ?? SUBGRID yaynSayfasi @MEDIA */
+/* @media (max-width: 700px) {
+    .abks-grid-yaynSayfasi-subgrid {
+        grid-column: 1 / span 12;
+        font-size: 90%;
+    }
+} */
+
+
+/**
+*+++ <!-- +++======== --><!-- +++ SIDEBAR CSS -->*/
+.abks-grid-item-sidebar {
+    /* grid-column: 10 / span 3;*/
+    grid-row: 3 / span 1; 
+
+    display: grid;
+    grid-template-columns: subgrid;
+    background-color: #fff2cb;
+    padding: 20px;
+    /* gap: 18px;
+                border: 4px solid #084258;
+                border-radius: 5px; */
+                /* grid-template-columns: 20% auto; */
+                /* max-height: 70vh; */
+                max-height: 100%;
+}
+
+/* overflow: auto; */
+
+    /**
+    * !! işlik */
+    /* position: fixed;
+  top: 200px;  */
+  /* left: 0; */
+  /* right: 0%;  
+  width: 200px;  
+  height: 50vh;  
+  align-items: center;
+ */
+
+
+
+    /* justify-self: right; */
+    /* The justify-self property aligns a grid item within its grid cell in the inline (soldan sağa) direction. To align a grid item in block direction instead of inline direction, use align-self or align-items properties.*/
+
+    /* align-content: center; */
+    /* The align-content property is used to vertically align the whole grid
+inside the container. */
+
+    /* override the default stretch */
+    /* align-self: flex-start;  */
+    /* align-self: flex-end;  */
+    /* -ms-grid-column-align: end;  */
+
+
+
+/**
+* +++ <!-- +++======== --><!-- +++SIDEBAR SUBGRID: CSS --> */
+.abks-grd-item-sidebar-subgrd {
+    /* grid-column: 1 / span 3; */
+    padding: 20px;
+    height: 15em;
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+    /* background-color: #fff2cb; */
+    /* overflow: auto; */
+    /* Bu da gerekebilir:  overflow: hidden; */
+}
+
+
+/**
+*?? SIDEBAR SUBGRID  @MEDIA */
+/* @media (max-width: 700px) {
+    .abks-grd-item-sidebar-subgrd {
+        grid-column: 1 / span 12;
+        height: 10em;
+        font-size: 90%;
+    }
+} */
+
+
+/**
+*+++ <!-- +++======== --><!-- +++ FOOTER CSS -->*/
+.abks-grid-item-footer {
+    grid-column: 1 / span 12;
+    grid-row: 4 / span 1;
+    
+    text-align: center;
+    font-weight: normal;
+    background-color: #463929;
+    color: #ffffff;
+    padding: 1%;
+
+    /* gap: 4px; */
+    /* border: 4px solid #084258;
+                border-radius: 5px; */
+}
+
+
+/**
+*+++ <!-- +++======== --><!-- +++ ANA @MEDIA CSS -->*/
+/* @media (max-width: 700px) {
+    .abks-grid-container {
+        font-size: 90%;
+    }
+
+    .abks-grid-item-header {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-navbar {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-main {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-sidebar {
+        grid-column: 1 / span 12;
+    }
+
+    .abks-grid-item-footer {
+        grid-column: 1 / span 12;
+    }
+} */
+
+/* !! ABAKUS .INDEX CSS SONU */
+
+        </style>
+
+
+    </head>
+
+
+    <body style="margin: 0%;">
+
+        <!-- +++======== --><!-- +++ HTML ______________ -->
+
+        <div class="abks-grid-container">
+
+            <!-- +++======== --><!-- +++ HEADER GRID HTML -->
+            <div class="abks-grid-item-header">
+                <h1 class="h-yayn h1-yayn">ABAKUS</h1>
+                <h2 class="h-yayn h2-yayn" style="color: white;">Bilgisayar, Felsefe, Vb.</h2>
+                <div id="abks-divInHeader">
+                    <p>Tarih, Hakkında, İletişim, Abonelik, Paylaşım, MüzVid</p>
+                </div>
+            </div>
+
+
+            <!-- +++======== --><!-- +++ NAVBAR GRID HTML -->
+            <div class="abks-grid-item-navbar">
+                <a href="index.html" title="ANA SAYFA">ANA SAYFA</a>
+                <a href="#" title="ETİK">ETİK</a>
+                <a href="#" title="HAKKIMDA">HAKKIMDA</a>
+                <a class="abks-grid-item-navbar-menu-right" href="#" title="Sağ Menu">SağMenu</a>
+                <!-- Normal Menüyü sağa yaslamak için class girmiş ve cssde yaslamış -->
+            </div>
+
+
+             <!-- +++======== --><!-- +++ SIDEBAR GRID HTML -->
+             <div class="abks-grid-item-sidebar">
+                <div class="abks-grd-item-sidebar-subgrd">
+                    <div class="prgrf-yayn text-yayn">
+                        <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 1</h2>
+                        <p>Some Text</p>
+                    </div>
+                </div>
+
+                <div class="abks-grd-item-sidebar-subgrd">
+                    <div class="prgrf-yayn text-yayn">
+                        <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 2</h2>
+                        <p>Some Text</p>
+                    </div>
+                </div>
+
+                <div class="abks-grd-item-sidebar-subgrd">
+                    <div class="prgrf-yayn text-yayn">
+                        <h2 class="h-yayn h2-yayn">BU BİR SİDE CONTAINERDIR 3</h2>
+                        <p>Some Text</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- +++======== --><!-- +++ MAIN (YAYIN GÖVDESİ) GRID HTML -->
+            <div class="abks-grid-item-main">
+
+                <div class="abks-grid-yayn-subgrid">
+                    <div class="prgrf-yayn text-yayn">
+                        <h1 class="h-yayn h1-yayn"><a class="link-rengim" href="MAKALELER/ESCAPE-CHARACTERS.html"
+                                                title="ESCAPE-CHARACTERS" target="_blank">ESCAPE CHARACTERS FOR HTML
+                                IN
+                                JASON,
+                                JAVASCRIPT, MARKDOWN, XML,
+                                XHTML, etc.</a></h1>
+                        <p>In this article, I tried to summarize the Escape Characters are used in codes of several
+                            languages.
+                        </p>
+
+                        <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim"
+                                                href="MAKALELER/ESCAPE-CHARACTERS.html" title="Continue Reading"
+                                                target="_blank">Continue Reading</a>
+                        </button>
+                    </div>
+                </div>
+
+
+                <div class="abks-grid-yayn-subgrid">
+                    <div class="prgrf-yayn text-yayn">
+                        <h1 class="h-yayn h1-yayn"><a class="link-rengim" href="MAKALELER/MAKALEM-1.html"
+                                                title="MAKALEM-1" target="_blank">MAKALEM 1</a></h1>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
+                            finibus
+                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim
+                            lorem
+                            quis nulla lobortis faucibus. Orci varius natoque penatibus et
+                            magnis
+                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus
+                            dapibus
+                            efficitur massa, in ullamcorper ex ultrices id.
+                            Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
+                            facilisi. Phasellus ultrices convallis dolor.
+                        </p>
+
+                        <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="MAKALELER/MAKALEM-1.html"
+                                                title="Okumaya devam edin" target="_blank">Okumaya Devam
+                                Edin</a>
+                        </button>
+
+                    </div>
+                </div>
+
+                <div class="abks-grid-yayn-subgrid">
+                    <div class="prgrf-yayn text-yayn">
+                        <h1 class="h-yayn h1-yayn"><a class="link-rengim" href="MAKALELER/MAKALEM-2.html"
+                                                title="MAKALEM-2" target="_blank">MAKALEM 2</a></h1>
+                        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis enim ipsum, nec
+                            finibus
+                            turpis posuere non. Proin scelerisque quis nulla vehicula interdum. Etiam dignissim
+                            lorem
+                            quis nulla lobortis faucibus. Orci varius natoque penatibus et
+                            magnis
+                            dis parturient montes, nascetur ridiculus mus. Aliquam erat volutpat. Vivamus
+                            dapibus
+                            efficitur massa, in ullamcorper ex ultrices id.
+                            Phasellus consectetur sem et odio fringilla, at facilisis orci vehicula. Nulla
+                            facilisi. Phasellus ultrices convallis dolor.
+                        </p>
+
+                        <!-- Ayarlamalar bitince target blanki kaldır buttondan -->
+                        <button class="yayn-cagrı-devamıOku"><a class="link-rengim" href="MAKALELER/MAKALEM-2.html"
+                                                title="Okumaya devam edin" target="_blank">Okumaya Devam
+                                Edin</a>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+           
+
+            <!-- +++======== --><!-- +++ FOOTER GRID HTML -->
+            <div class="abks-grid-item-footer">
+                <h1 class="h-yayn h1-yayn" style="color:white;">FOOTER</h1>
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

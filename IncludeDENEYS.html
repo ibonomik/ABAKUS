@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="description" content="DESCRIPTION">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>IncludeDENEYS</title>
+
+    <!-- ?? SERVİS ÇAĞIRMALARIM-->
+    <!-- <script src="https://kit.fontawesome.com/9c1d3824be.js" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                        crossorigin="anonymous"></script>
+    <!-- <script src="https://www.w3schools.com/lib/w3.js"></script> -->
+
+    <!-- ?? DOSYALARIMI ÇAĞIRMALARIM-->
+    <!-- ^ Alttaki kod ABKS-HTMLImporter.js kodunu çağırmak için -->
+    <script type="text/javascript" src="JSCODES/ABKS-HTMLImporter.js"></script>
+    <!-- ^ Alttaki kod aşağıdaki ABKS-gold-incld-run.js yi çağırmak için. INCLUDE AND RUN GOLD HTML SCRIPT'ini doğrudan değil, externaldan kullanırsan diye. -->
+    <!-- <script type="text/javascript" src="JSCODES/gold-incld-run.js"></script> -->
+    <link rel="stylesheet" type="text/css" href="ABKS-CSS.css">
+    <link rel="icon" href="ABKS.Faviconum-128x128-Yuvarlak.png" type="image/x-icon">
+
+
+    <!-- * LOLO -->
+    <!-- <script src="jquery.js"></script> -->
+    <!-- <script>
+      $(function () {
+        $("#includedContent").load("ANAYAPI/ABKS-Header.html");
+        $("#includedContent2").load("ANAYAPI/ABKS-Navbar.html");
+        $("#includedContent3").load("ANAYAPI/ABKS-Sidebar.html");
+        $("#includedContent4").load("ANAYAPI/ABKS-Footer.html");
+      });
+    </script> -->
+
+
+    <!-- * EXPANDING LOLO -->
+    <script>
+      $(function () {
+        var includes = $('[data-include]')
+        $.each(includes, function () {
+          var file = 'ANAYAPI/' + $(this).data('include') + '.html'
+          $(this).load(file)
+        })
+      })
+    </script>
+
+
+    <!-- W3C -->
+    <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /* Loop through a collection of all HTML elements: */
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain atrribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /* Make an HTTP request using the attribute value as the file name: */
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+              if (this.readyState == 4) {
+                if (this.status == 200) { elmnt.innerHTML = this.responseText; }
+                if (this.status == 404) { elmnt.innerHTML = "Page not found."; }
+                /* Remove the attribute, and call this function once more: */
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /* Exit the function: */
+            return;
+          }
+        }
+      }
+    </script>
+
+    <style>
+
+
+
+    </style>
+
+  </head>
+
+  <body style="margin: 0%;">
+
+    <!-- ++ MAKALE ÖNCESİNDEKİLER -->
+
+    <!-- * LOLO -->
+    <!-- <div id="includedContent"></div>
+    <div id="includedContent2"></div> -->
+
+    <!-- * EXPNDNG LOLO -->
+    <!-- <div data-include="ABKS-Header"></div>
+      <div data-include="ABKS-Navbar"></div> -->
+
+    <!-- * W3C -->
+    <!-- <div w3-include-html="ANAYAPI/ABKS-AnaGridContainer.html"></div> -->
+    <!-- <div w3-include-html="ANAYAPI/ABKS-Header.html"></div>
+      <div w3-include-html="ANAYAPI/ABKS-Navbar.html"></div> -->
+
+    <!-- * HTML importer -->
+
+    <!-- +++ joker kodlar -->
+    <!-- <div data-include="ANAYAPI/ABKS-AnaGridContainer.html"></div> -->
+    <div class="abks-grid-container">
+      <!-- </div> -->
+
+
+      <!-- <script>HTMLImporter.import("ANAYAPI/ABKS-AnaGridContainer.html");</script> -->
+      <script>HTMLImporter.import("ANAYAPI/ABKS-Header.html");</script>
+      <script>HTMLImporter.import("ANAYAPI/ABKS-Navbar.html");</script>
+
+
+
+
+      <!-- ++ MAKALE -->
+
+      <div class="abks-grid-main-mkl prgrf-yayn text-yayn">
+
+        <div>
+          <h1 class="h-yayn h1-yayn">-IncludeDENEYS</h1>
+          <h5>7.Mart.2024</h5>
+
+          <p>Ex sit anim non ipsum labore id ut esse fugiat. Nisi elit tempor
+            magna id
+            irure laboris magna do amet aliquip dolore duis. Ut quis aliqua ex magna officia. Id nostrud
+            deserunt
+            laboris in mollit velit ex deserunt fugiat magna ipsum. Ipsum id irure cupidatat pariatur
+            anim
+            incididunt. Amet ad ea occaecat minim consectetur aliqua do Lorem in Lorem proident. </p>
+
+
+          <div id="convTMAcBtn" w3-include-html="GADGETS/Converters.html"></div>
+          <div w3-include-html="GADGETS/FirtinaTakvimi.html"></div>
+
+
+        </div>
+      </div>
+
+
+      <!-- * Html importer -->
+      <script>HTMLImporter.import("ANAYAPI/ABKS-Sidebar.html");</script>
+      <script>HTMLImporter.import("ANAYAPI/ABKS-Footer.html");</script>
+
+      <!-- +++ Joker div -->
+    </div>
+
+
+    <!-- ++ MAKALE ARDINDAKİLER -->
+    <!-- * w3C -->
+    <!-- <div w3-include-html="ANAYAPI/ABKS-Sidebar.html"></div>
+      <div w3-include-html="ANAYAPI/ABKS-Footer.html"></div> -->
+
+
+
+    <!-- * LOLO -->
+    <!-- <div id="includedContent3"></div>
+    <div id="includedContent4"></div> -->
+
+
+    <!-- * EXPANDING LOLO -->
+    <!-- <div data-include="ABKS-Sidebar"></div>
+    <div data-include="ABKS-Footer"></div> -->
+
+
+    <!-- *W3C -->
+    <!-- <script>
+  includeHTML();
+
+  </script> -->
+
+
+    <script>
+      includeHTML(myCallback);
+
+      function myCallback() {
+        // code that has to wait goes here
+      }
+    </script>
+
+    <!-- <script>
+  w3.includeHTML(myCallback);
+
+function myCallback() { -->
+    <!-- code that has to wait goes here -->
+    <!-- }
+   </script> -->
+
+
+
+
+
+
+
+  </body>
+
+</html>
